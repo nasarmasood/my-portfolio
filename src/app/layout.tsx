@@ -1,12 +1,25 @@
 import type { Metadata } from "next";
-import { Work_Sans } from 'next/font/google';
+import { Work_Sans, Poppins } from 'next/font/google'; // 1. Import Poppins
 import "./globals.css";
+import HeaderDesktop from "./components/headerDesktop";
 
-
+// ----------------------------------------------------
+// Work Sans Configuration (Your primary font, variable-font)
+// ----------------------------------------------------
 const workSans = Work_Sans({
   subsets: ['latin'],
-  display: 'swap', // Helps prevent layout shift (CLS)
-  variable: '--font-work-sans', // Defines a CSS variable for Tailwind
+  display: 'swap',
+  variable: '--font-work-sans', // Primary font variable
+});
+
+// ----------------------------------------------------
+// Poppins Configuration (Secondary font, non-variable font, requires weights)
+// ----------------------------------------------------
+const poppins = Poppins({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['400', '600', '700'], // You must specify weights for non-variable fonts
+  variable: '--font-poppins', // Secondary font variable
 });
 
 export const metadata: Metadata = {
@@ -22,9 +35,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${workSans.variable} antialiased`}
+        className={`${workSans.variable} ${poppins.variable} font-work antialiased m-0 p-0`}
       >
-        {children}
+        <div><HeaderDesktop/></div>
+        <div>{children}</div>
       </body>
     </html>
   );

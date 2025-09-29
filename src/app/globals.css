@@ -1,26 +1,129 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-primary: #A53DFF;
+  --color-primary-light: #EDD8FF;
+  --primary-white: #FFFFFF;
+  --color-content-dark: #132238;
+  --color-main-text: #556070;
+  --color-neutral-dark: #333333;
+  --color-grey: #F0F1F3;
+  
+ 
+
+  --shadow-theme-md:
+    0px 4px 8px -2px rgba(16, 24, 40, 0.1),
+    0px 2px 4px -2px rgba(16, 24, 40, 0.06);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+
+.container-wrapper
+{
+  width:'100%';
+  margin:0;
+  padding:0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.container{
+  max-width: 1024px;
+  padding:0 0;
+  margin:0 auto
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-primary-light {
+  background-color: var(--color-primary-light);
+}
+
+.bg-primary-white {
+  background-color: var(--primary-white);
+}
+
+.bg-content-dark {
+  background-color: var(--color-content-dark);
+}
+
+.bg-main-text {
+  background-color: var(--color-main-text);
+}
+
+.bg-neutral-dark {
+  background-color: var(--color-neutral-dark);
+}
+
+.bg-grey {
+  background-color: var(--color-grey);
+}
+
+.border-grey {
+ border-color: var(--color-grey);
+}
+
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-primary-light {
+  color: var(--color-primary-light);
+}
+
+.text-primary-white {
+  color: var(--primary-white);
+}
+
+.text-content-dark {
+  color: var(--color-content-dark);
+}
+
+.text-main-text {
+  color: var(--color-main-text);
+}
+
+.text-neutral-dark {
+  color: var(--color-neutral-dark);
+}
+
+.text-grey {
+  color: var(--color-grey);
+}
+
+
+.font-work {
+  font-family: var(--font-work-sans), sans-serif;
+}
+
+.font-poppins {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
 }
