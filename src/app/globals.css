@@ -14,7 +14,8 @@
   --color-main-text: #556070;
   --color-neutral-dark: #333333;
   --color-grey: #F0F1F3;
-  
+  --color-grey-dark:#E6E8EB;
+  --color-grey-dark-two: #87909D;
  
 
   --shadow-theme-md:
@@ -69,6 +70,9 @@
  border-color: var(--color-grey);
 }
 
+.border-grey-dark {
+ border-color: var(--color-grey-dark);
+}
 
 .text-primary {
   color: var(--color-primary);
@@ -92,6 +96,11 @@
 
 .text-neutral-dark {
   color: var(--color-neutral-dark);
+}
+
+
+.text-grey-dark {
+  color: var(--color-grey-dark-two);
 }
 
 .text-grey {
