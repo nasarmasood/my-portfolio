@@ -74,6 +74,10 @@
  border-color: var(--color-grey-dark);
 }
 
+.border-primary {
+ border-color: var(--color-primary);
+}
+
 .text-primary {
   color: var(--color-primary);
 }

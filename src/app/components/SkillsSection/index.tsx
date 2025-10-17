@@ -89,7 +89,7 @@ function SkillsSection() {
       </div>
 
       <div className="container">
-        <div className="grid grid-cols-3 md:grid-cols-5 gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-5 mb-10">
           {skillsAarray.map((skill, index) => {
             return (
               <div className="item bg-grey px-5 shadow-md rounded-lg   shadow-md ">
