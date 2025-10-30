@@ -1,9 +1,7 @@
 'use client'
 import React from 'react'
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { userAgent } from 'next/server';
-function ProjectSection() {
+function FooterSection() {
 
     const [visibleCount, setVisibleCount] = useState(6);
       const handleToggle = () => {
@@ -14,7 +12,6 @@ function ProjectSection() {
     }
   };
 
-  const router=useRouter()
 
             const projects=[
               {
@@ -77,80 +74,37 @@ function ProjectSection() {
 
 
   return (
-    <div className="container-wrapper bg-grey">
+    <div className="container-wrapper bg-content-dark">
       <div className='pb-10'>
-      <div className='flex justify-center'>
-        <div className='w-[500px] text-center mt-10 mb-10'>
-      <p className='font-semibold text-[48px]'>Projects</p>
-      <p className='mt-3'>There are many variations of passages of Lorem Ipsum available,
-but the majority have suffered alteration.</p>
-</div>
-</div>
         <div className='container'>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
-                   {projects.slice(0, visibleCount).map((item, index) => (
+           
+           <div className="flex items-center flex-col md:flex-row justify-between gap-3 pt-20">
+            <div className="flex gap-2 items-center">
             <div
-              key={index}
-              className="item bg-white shadow-md rounded-lg rounded-2"
+              className="w-[56px] h-[56px] 
+            bg-primary 
+            rounded-full flex justify-center items-center text-primary-white p-[0] m-[0] font-poppins font-medium text-[24px]"
             >
-              <div className="w-full h-[200px]">
-                <img
-                  src={item.src}
-                  alt="project pic"
-                  className="w-[100%] h-[100%] object-cover"
-                />
-              </div>
-              <div className="border-grey-dark border-1 p-4">
-                <p className="font-medium text-[16px] text-grey-dark">
-                  {item.type}
-                </p>
-                <p className="font-semibold text-[18px]">{item.title}</p>
-                <p className="text-main-text text-[14px] mt-[15px]">
-                  {item.description}
-                </p>
-                <div
-                  role="button"
-                  onClick={()=>router.push('/projectDetail')}
-                  style={{
-                    border: '2px solid #A53DFF',
-                    width: '165px',
-                    borderRadius: '4px',
-                    color: '#A53DFF',
-                    display: 'flex',
-                    gap: '5px',
-                  }}
-                  className="cursor-pointer px-[10px] py-[8px] rounded-1 inline-block mt-[20px]"
-                >
-                  <p className="font-semibold text-[16px]" >Download CV</p>
-                  <div className="w-[24px] h-[24px]">
-                    <img
-                      src="/images/rightarrow.svg"
-                      alt="download icon"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-              </div>
+              N
             </div>
-          ))}
-               
-             
+            <div>
+              <p className="font-semibold text-[32px] text-primary-white ">Nasar</p>
+            </div>
+          </div>
+          <div className='flex gap-5'>
+              <p role='button'  className="font-regular text-[16px] text-primary-white cursor-pointer">Home</p>
+              <p className="font-regular text-[16px] text-primary-white cursor-pointer">Experience</p>
+              <p className="font-regular text-[16px] text-primary-white cursor-pointer">Skills</p>
+              <p className="font-regular text-[16px] text-primary-white cursor-pointer">Projects</p>
+              <p className="font-regular text-[16px] text-primary-white cursor-pointer">Contact</p>
+          
+          </div>
+          <div>
+                          <p className="font-regular text-[16px] text-primary-white ">Copyright © 2022 Picto.</p>
 
+          </div>
             </div>
-             <div className='flex justify-center w-full'>
-                  <div
-                  onClick={handleToggle}
-                role="button"
-                style={{
-                  backgroundColor: "#A53DFF",
-                  borderRadius: "8px",
-                  color: "#FFFFFF",
-                }}
-                className="cursor-pointer px-[24px] py-[12px]  inline-block mt-[20px]"
-              >
-                <p className="font-medium text-[16px]">   {isAllVisible ? 'View Less' : 'More Project'}</p>
-              </div>
-              </div>
+           
 
         </div>
         </div>
@@ -158,4 +112,4 @@ but the majority have suffered alteration.</p>
   )
 }
 
-export default ProjectSection
+export default FooterSection

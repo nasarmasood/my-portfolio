@@ -37,7 +37,6 @@ export default function RootLayout({
       <body
         className={`${workSans.variable} ${poppins.variable} font-work antialiased m-0 p-0`}
       >
-        <div><HeaderDesktop/></div>
         <div>{children}</div>
       </body>
     </html>

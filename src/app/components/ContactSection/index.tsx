@@ -12,7 +12,7 @@ function ContactSection() {
 const isSelected = (option: string) => selectedContactOption === option;
   return (
     <div className='container-wrapper bg-white'>
-        <div className='container shadow-[0px_50px_12px_0px_rgba(0,_0,_0,_0.12)]'>
+        <div  className='container shadow-[0px_50px_12px_0px_rgba(0,_0,_0,_0.12)] '>
 <div className="p-[40px] flex flex-col md:flex-row items-center gap-5">
             <div>
                 <div>
@@ -144,7 +144,7 @@ but the majority have suffered alte.</p>
          focus:placeholder:text-[#A53DFF]
          placeholder:text-sm py-2"
 />
-<div className='flex'>
+<div className='flex gap-2'>
     
 <input
   type="text"
