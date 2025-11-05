@@ -36,8 +36,10 @@ const slides = [
 
 export default function DetailSlider() {
   return (
-<div className='container-wrapper bg-white'>
-        <div  className='container '>      <Swiper
+<div className='container-wrapper bg-grey'>
+        <div  className='container '> 
+          <div className="mt-5 py-5">     
+          <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={30}
         slidesPerView={1}
@@ -54,11 +56,7 @@ export default function DetailSlider() {
           <SwiperSlide  key={i}>
             <div className="bg-white rounded-xl overflow-hidden shadow-md">
               {/* Top full-width image */}
-              <div className="h-72 w-full relative">
-              <Image fill src="/images/ProjectDetailPic.png" alt='project pic'/>
-                
-                
-              </div>
+              
 
               {/* Bottom two images: 30% + 70% */}
               <div className="flex gap-2 mt-2 px-2">
@@ -83,6 +81,7 @@ export default function DetailSlider() {
           </SwiperSlide>
         ))}
       </Swiper>
+      </div>
       </div>
     </div>
   );

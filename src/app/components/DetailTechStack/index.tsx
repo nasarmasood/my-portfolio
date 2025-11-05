@@ -1,7 +1,7 @@
 import React from "react";
 import { FaReact } from "react-icons/fa";
 
-function SkillsSection() {
+function DetailTechStack() {
   const skillsAarray = [
     {
       title: "React Js",
@@ -77,10 +77,11 @@ function SkillsSection() {
     },
   ];
   return (
-    <div className="container-wrapper py-5">
+    <div className="container-wrapper bg-grey">
+        <div className="py-5">
       <div className="flex justify-center">
-        <div className="w-[500px] text-center mt-10 mb-10">
-          <p className="font-semibold text-[48px]">Skills</p>
+        <div className="w-[500px] text-center mb-5">
+          <p className="font-semibold text-[48px]">Tech Stack Used</p>
           <p className="mt-3">
             There are many variations of passages of Lorem Ipsum available, but
             the majority have suffered alteration.
@@ -89,7 +90,7 @@ function SkillsSection() {
       </div>
 
       <div className="container">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-5 mb-10">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-5 ">
           {skillsAarray.map((skill, index) => {
             return (
               <div className="item bg-grey px-5 shadow-md rounded-lg   shadow-md ">
@@ -102,8 +103,9 @@ function SkillsSection() {
           })}
         </div>
       </div>
+      </div>
     </div>
   );
 }
 
-export default SkillsSection;
+export default DetailTechStack;
