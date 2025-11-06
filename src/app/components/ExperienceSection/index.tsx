@@ -74,7 +74,7 @@ function ExperienceSection() {
 
 
   return (
-    <div className="container-wrapper bg-grey">
+    <div id='experience' className="container-wrapper bg-grey">
       <div className='pb-10'>
       <div className='flex justify-center'>
         <div className='w-[500px] text-center mt-10 mb-5'>

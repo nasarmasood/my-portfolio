@@ -77,7 +77,7 @@ function ProjectSection() {
 
 
   return (
-    <div className="container-wrapper bg-grey">
+    <div id='projects' className="container-wrapper bg-grey">
       <div className='pb-10'>
       <div className='flex justify-center'>
         <div className='w-[500px] text-center mt-10 mb-10'>

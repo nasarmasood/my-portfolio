@@ -4,7 +4,7 @@ import React, { useState } from "react";
 function HeroSection() {
     const [selectedIcon,setSelectedIcon]=useState<string>()
   return (
-    <div style={{paddingTop:'30px'}} className="container-wrapper relative overflow-hidden">
+    <div id="home" style={{paddingTop:'30px'}} className="container-wrapper relative overflow-hidden">
         <div className="absolute w-[871px] h-[871.21px] left-[80%] top-[-803px] rotate-[130.44deg] bg-[radial-gradient(ellipse,_#000000_20%,_#DA4DF1_40%)] opacity-40 blur-3xl z-[-1] pointer-events-none">
 </div>
    <div className="absolute w-[1044.32px] h-[1044.32px] left-[90%] top-[191px] rotate-[130.44deg] bg-[radial-gradient(ellipse,_#C4F5E9_70%)] opacity-40 blur-3xl z-[-1] pointer-events-none">

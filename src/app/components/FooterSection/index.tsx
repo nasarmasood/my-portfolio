@@ -13,6 +13,15 @@ function FooterSection() {
   };
 
 
+  function scrollToSection(id:string) {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  } else {
+    console.warn(`Element with id "${id}" not found.`);
+  }
+}
+
             const projects=[
               {
                 title:'zebra doctor',
@@ -92,11 +101,11 @@ function FooterSection() {
             </div>
           </div>
           <div className='flex gap-5'>
-              <p role='button'  className="font-regular text-[16px] text-primary-white cursor-pointer">Home</p>
-              <p className="font-regular text-[16px] text-primary-white cursor-pointer">Experience</p>
-              <p className="font-regular text-[16px] text-primary-white cursor-pointer">Skills</p>
-              <p className="font-regular text-[16px] text-primary-white cursor-pointer">Projects</p>
-              <p className="font-regular text-[16px] text-primary-white cursor-pointer">Contact</p>
+              <p role='button' onClick={()=>scrollToSection('home')}  className="font-regular text-[16px] text-primary-white cursor-pointer">Home</p>
+              <p role='button'  onClick={()=>scrollToSection('experience')} className="font-regular text-[16px] text-primary-white cursor-pointer">Experience</p>
+              <p role='button'  onClick={()=>scrollToSection('skills')} className="font-regular text-[16px] text-primary-white cursor-pointer">Skills</p>
+              <p role='button'  onClick={()=>scrollToSection('projects')} className="font-regular text-[16px] text-primary-white cursor-pointer">Projects</p>
+              <p role='button'  onClick={()=>scrollToSection('contact')} className="font-regular text-[16px] text-primary-white cursor-pointer">Contact</p>
           
           </div>
           <div>

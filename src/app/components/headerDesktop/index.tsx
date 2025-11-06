@@ -4,6 +4,15 @@ import { useState } from "react";
 function HeaderDesktop() {
   const [selectedSection, setSelectedSection] = useState<string>("Home");
 
+  function scrollToSection(id:string) {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  } else {
+    console.warn(`Element with id "${id}" not found.`);
+  }
+}
+
   return (
     <div className="container-wrapper">
       <div className="container">
@@ -28,7 +37,11 @@ function HeaderDesktop() {
           <div>
             <div
               role="button"
-              onClick={()=>setSelectedSection('Home')}
+              onClick={()=>
+              {
+                setSelectedSection('Home')
+                scrollToSection('home')
+              }}
               style={{
                 backgroundColor: selectedSection == "Home" ? "#A53DFF" : "#FFFFFF",
                 borderRadius: "8px",
@@ -40,7 +53,11 @@ function HeaderDesktop() {
             </div>
             <div
               role="button"
-                            onClick={()=>setSelectedSection('Experience')}
+                             onClick={()=>
+              {
+                setSelectedSection('Experience')
+                scrollToSection('experience')
+              }}
 
               style={{
                 backgroundColor: selectedSection == "Experience" ? "#A53DFF" : "#FFFFFF",
@@ -53,7 +70,11 @@ function HeaderDesktop() {
             </div>
             <div
               role="button"
-                            onClick={()=>setSelectedSection('Skills')}
+                                             onClick={()=>
+              {
+                setSelectedSection('Skills')
+                scrollToSection('skills')
+              }}
 
               style={{
                 backgroundColor: selectedSection == "Skills" ? "#A53DFF" :"#FFFFFF",
@@ -66,7 +87,11 @@ function HeaderDesktop() {
             </div>
             <div
               role="button"
-                            onClick={()=>setSelectedSection('Projects')}
+                                             onClick={()=>
+              {
+                setSelectedSection('Projects')
+                scrollToSection('projects')
+              }}
 
               style={{
                 backgroundColor: selectedSection == "Projects" ? "#A53DFF" : "#FFFFFF",
@@ -79,7 +104,11 @@ function HeaderDesktop() {
             </div>
             <div
               role="button"
-                            onClick={()=>setSelectedSection('Contact')}
+                   onClick={()=>
+              {
+                setSelectedSection('Contact')
+                scrollToSection('contact')
+              }}       
 
               style={{
                 backgroundColor: selectedSection == "Contact" ? "#A53DFF" : "#FFFFFF",

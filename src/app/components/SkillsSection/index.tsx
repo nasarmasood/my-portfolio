@@ -77,7 +77,7 @@ function SkillsSection() {
     },
   ];
   return (
-    <div className="container-wrapper py-5">
+    <div id='skills' className="container-wrapper py-5">
       <div className="flex justify-center">
         <div className="w-[500px] text-center mt-10 mb-10">
           <p className="font-semibold text-[48px]">Skills</p>
