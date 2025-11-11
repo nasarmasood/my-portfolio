@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Work_Sans, Poppins } from 'next/font/google'; // 1. Import Poppins
 import "./globals.css";
-import HeaderDesktop from "./components/headerDesktop";
+import HeaderDesktop from "./components/responsiveHeader";
 
 // ----------------------------------------------------
 // Work Sans Configuration (Your primary font, variable-font)

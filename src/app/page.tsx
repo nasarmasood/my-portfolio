@@ -4,12 +4,12 @@ import SkillsSection from "./components/SkillsSection";
 import ExperienceSection from "./components/ExperienceSection"
 import ContactSection from "./components/ContactSection";
 import FooterSection from "./components/FooterSection";
-import HeaderDesktop from "./components/headerDesktop";
+import ResponsiveHeader from "./components/responsiveHeader";
 
 export default function Home() {
   return (
     <div>
-      <HeaderDesktop/>
+      <ResponsiveHeader/>
      <HeroSection/>
      <ProjectSection/>
      <SkillsSection/>

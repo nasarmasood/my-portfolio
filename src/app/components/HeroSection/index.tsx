@@ -32,7 +32,7 @@ function HeroSection() {
             bg-primary 
             rounded-full flex justify-center items-center text-primary-white p-[0] m-[0]'
         > */}
-        <div className="flex justify-between">
+        {/* <div className="flex justify-between">
           <div className="w-[55%]">
             <div>
               <p className="font-semibold text-[72px] leading-none">
@@ -84,16 +84,70 @@ function HeroSection() {
               className="w-full h-full object-cover"
             />
           </div>
-        </div>
+        </div> */}
+<div className="flex flex-col-reverse md:flex-row justify-between items-center md:items-start">
+  {/* Image Section (goes on top in mobile/tablet) */}
+ 
 
-        <div className="flex justify-between border border-black   item-center shadow-md rounded-lg py-[80px] px-[40px] mt-[200px]">
-          <div className="bg-grey px-5 shadow-md rounded-lg  w-[40%] relative">
+  {/* Text Section */}
+  <div className="w-full md:w-[55%] text-center md:text-left">
+    <p className="font-semibold text-[40px] md:text-[72px] leading-tight">
+      Hello, I’m <span className="text-primary">Nasar Masood</span>
+    </p>
+
+    <p className="mt-4 text-[16px] text-neutral-700">
+      I'm a Freelance UI/UX Designer and Developer based in London, England.
+      I strive to build immersive and beautiful web applications through
+      carefully crafted code and user-centric design.
+    </p>
+
+    <div
+      role="button"
+      style={{
+        backgroundColor: "#A53DFF",
+        borderRadius: "8px",
+        color: "#FFFFFF",
+      }}
+      className="cursor-pointer px-[24px] py-[12px] inline-block mt-[20px]"
+    >
+      <p className="font-medium text-[16px]">Say Hello!</p>
+    </div>
+
+    {/* Stats Section */}
+    <div className="flex flex-col md:flex-row justify-center md:justify-between gap-4 mt-[50px] md:mt-[100px]">
+      <div className="bg-primary-light px-[30px] py-[10px] rounded-lg text-center">
+        <p className="font-semibold text-[24px] md:text-[32px]">15 Y.</p>
+        <p className="text-neutral-dark">Experience</p>
+      </div>
+      <div className="bg-primary-light px-[30px] py-[10px] rounded-lg text-center">
+        <p className="font-semibold text-[24px] md:text-[32px]">250+</p>
+        <p className="text-neutral-dark">Projects Completed</p>
+      </div>
+      <div className="bg-primary-light px-[30px] py-[10px] rounded-lg text-center">
+        <p className="font-semibold text-[24px] md:text-[32px]">58</p>
+        <p className="text-neutral-dark">Happy Clients</p>
+      </div>
+    </div>
+  </div>
+   <div className="w-[60%] md:w-[40%] flex justify-center md:justify-end mb-10 md:mb-0">
+    <div className="relative w-[180px] h-[180px] md:w-[400px] md:h-[400px] rounded-full overflow-hidden shadow-lg bg-primary">
+      <img
+        src="/images/mypic.png"
+        alt="My Picture"
+        className="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+</div>
+
+        <div className="flex flex-col lg:flex-row justify-between border border-black   item-center shadow-md rounded-lg py-[80px] px-[40px] mt-[50px] lg:mt-[200px]">
+          <div className="bg-grey  px-5 shadow-md rounded-lg  w-[100%] lg:w-[40%] relative">
             <img
               src="/images/mypictransparent.png"
               alt="My Picture"
               className="w-full h-full object-cover"
             />
-            <div className="absolute bg-white flex gap-5 border-4 border-grey px-8 py-2 rounded-lg bottom-[-30px] left-[70px]">
+            <div className="absolute bg-white flex gap-5 border-4 border-grey px-8 py-2 rounded-lg bottom-[-30px]  left-[30px] lg:left-[70px]">
                 <div 
                 role="button"
                 onClick={()=>setSelectedIcon("facebook")}
@@ -134,8 +188,8 @@ function HeroSection() {
             />}</div>
             </div>
           </div>
-          <div className="w-[55%] flex flex-col justify-center items-center">
-            <div>
+          <div className="w-[100%] lg:w-[55%] flex flex-col justify-center items-center">
+            <div className="mt-[60px] lg:mt-[0px]">
               <p className="font-semibold text-[38px] leading-none">
                 I am Professional User Experience Designer
               </p>
@@ -154,7 +208,7 @@ function HeroSection() {
               </p>
             </div>
 
-            <div className="w-[100%] flex gap-2">
+            <div className="w-[100%] flex flex-col lg:flex-row gap-[0px] lg:gap-2">
               <div
                 role="button"
                 style={{
