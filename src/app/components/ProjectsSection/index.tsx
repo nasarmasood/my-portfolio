@@ -3,6 +3,7 @@ import React from 'react'
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { userAgent } from 'next/server';
+import { projects } from '../data/projects';
 function ProjectSection() {
 
     const [visibleCount, setVisibleCount] = useState(6);
@@ -16,62 +17,7 @@ function ProjectSection() {
 
   const router=useRouter()
 
-            const projects=[
-              {
-                title:'zebra doctor',
-                src:'/images/projectpic.svg',
-                type:'full stack',
-                description:'Vivamus eleifend convallis ante, non pharetra libero molestie laoreet. Donec id imperdiet lacus.'
-              },
-              {
-                title:'zebra doctor',
-                src:'/images/projectpic.svg',
-                type:'full stack',
-                description:'Vivamus eleifend convallis ante, non pharetra libero molestie laoreet. Donec id imperdiet lacus.'
-              },
-              {
-                title:'zebra doctor',
-                src:'/images/projectpic.svg',
-                type:'full stack',
-                description:'Vivamus eleifend convallis ante, non pharetra libero molestie laoreet. Donec id imperdiet lacus.'
-              },
-               {
-                title:'zebra doctor',
-                src:'/images/projectpic.svg',
-                type:'full stack',
-                description:'Vivamus eleifend convallis ante, non pharetra libero molestie laoreet. Donec id imperdiet lacus.'
-              },
-              {
-                title:'zebra doctor',
-                src:'/images/projectpic.svg',
-                type:'full stack',
-                description:'Vivamus eleifend convallis ante, non pharetra libero molestie laoreet. Donec id imperdiet lacus.'
-              },
-              {
-                title:'zebra doctor',
-                src:'/images/projectpic.svg',
-                type:'full stack',
-                description:'Vivamus eleifend convallis ante, non pharetra libero molestie laoreet. Donec id imperdiet lacus.'
-              },
-               {
-                title:'zebra doctor',
-                src:'/images/projectpic.svg',
-                type:'full stack',
-                description:'Vivamus eleifend convallis ante, non pharetra libero molestie laoreet. Donec id imperdiet lacus.'
-              },
-              {
-                title:'zebra doctor',
-                src:'/images/projectpic.svg',
-                type:'full stack',
-                description:'Vivamus eleifend convallis ante, non pharetra libero molestie laoreet. Donec id imperdiet lacus.'
-              },
-              {
-                title:'zebra doctor',
-                src:'/images/projectpic.svg',
-                type:'full stack',
-                description:'Vivamus eleifend convallis ante, non pharetra libero molestie laoreet. Donec id imperdiet lacus.'
-              }
-            ]
+         
 
                 const isAllVisible = visibleCount >= projects.length;
 
@@ -88,25 +34,25 @@ but the majority have suffered alteration.</p>
 </div>
         <div className='container'>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
-                   {projects.slice(0, visibleCount).map((item, index) => (
+                   {projects.slice(0, visibleCount).map((project, index) => (
             <div
               key={index}
               className="item bg-white shadow-md rounded-lg rounded-2"
             >
               <div className="w-full h-[200px]">
                 <img
-                  src={item.src}
+                  src={project.src}
                   alt="project pic"
                   className="w-[100%] h-[100%] object-cover"
                 />
               </div>
               <div className="border-grey-dark border-1 p-4">
                 <p className="font-medium text-[16px] text-grey-dark">
-                  {item.type}
+                  {project.type}
                 </p>
-                <p className="font-semibold text-[18px]">{item.title}</p>
+                <p className="font-semibold text-[18px]">{project.name}</p>
                 <p className="text-main-text text-[14px] mt-[15px]">
-                  {item.description}
+                  {project.description}
                 </p>
                 <div
                   role="button"

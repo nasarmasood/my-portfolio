@@ -1,8 +1,18 @@
 'use client'
 import React, { useState } from "react";
+import { content, Content } from "@/app/components/data/conent";
 
 function HeroSection() {
     const [selectedIcon,setSelectedIcon]=useState<string>()
+     function scrollToSection(id: string) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    } else {
+      console.warn(`Element with id "${id}" not found.`);
+    }
+  }
+
   return (
     <div id="home" style={{paddingTop:'30px'}} className="container-wrapper relative overflow-hidden">
         <div className="absolute w-[871px] h-[871.21px] left-[80%] top-[-803px] rotate-[130.44deg] bg-[radial-gradient(ellipse,_#000000_20%,_#DA4DF1_40%)] opacity-40 blur-3xl z-[-1] pointer-events-none">
@@ -92,17 +102,16 @@ function HeroSection() {
   {/* Text Section */}
   <div className="w-full md:w-[55%] text-center md:text-left">
     <p className="font-semibold text-[40px] md:text-[72px] leading-tight">
-      Hello, I’m <span className="text-primary">Nasar Masood</span>
+      Hello, I’m <span className="text-primary">{content.name}</span>
     </p>
 
     <p className="mt-4 text-[16px] text-neutral-700">
-      I'm a Freelance UI/UX Designer and Developer based in London, England.
-      I strive to build immersive and beautiful web applications through
-      carefully crafted code and user-centric design.
+     {content.intro}
     </p>
 
     <div
       role="button"
+      onClick={()=>scrollToSection('contact')}
       style={{
         backgroundColor: "#A53DFF",
         borderRadius: "8px",
@@ -115,17 +124,17 @@ function HeroSection() {
 
     {/* Stats Section */}
     <div className="flex flex-col md:flex-row justify-center md:justify-between gap-4 mt-[50px] md:mt-[100px]">
-      <div className="bg-primary-light px-[30px] py-[10px] rounded-lg text-center">
-        <p className="font-semibold text-[24px] md:text-[32px]">15 Y.</p>
+      <div className="bg-primary-light px-[20px] py-[10px] rounded-lg text-center">
+        <p className="font-semibold text-[24px] md:text-[26px]">2 Y+.</p>
         <p className="text-neutral-dark">Experience</p>
       </div>
-      <div className="bg-primary-light px-[30px] py-[10px] rounded-lg text-center">
-        <p className="font-semibold text-[24px] md:text-[32px]">250+</p>
+      <div className="bg-primary-light px-[20px] py-[10px] rounded-lg text-center">
+        <p className="font-semibold text-[24px] md:text-[26px]">20+</p>
         <p className="text-neutral-dark">Projects Completed</p>
       </div>
-      <div className="bg-primary-light px-[30px] py-[10px] rounded-lg text-center">
-        <p className="font-semibold text-[24px] md:text-[32px]">58</p>
-        <p className="text-neutral-dark">Happy Clients</p>
+      <div className="bg-primary-light px-[20px] py-[10px] rounded-lg text-center">
+        <p className="font-semibold text-[24px] md:text-[26px]">Full-Stack</p>
+        <p className="text-neutral-dark">Expertise</p>
       </div>
     </div>
   </div>
@@ -150,7 +159,10 @@ function HeroSection() {
             <div className="absolute bg-white flex gap-5 border-4 border-grey px-8 py-2 rounded-lg bottom-[-30px]  left-[30px] lg:left-[70px]">
                 <div 
                 role="button"
-                onClick={()=>setSelectedIcon("facebook")}
+                onClick={()=>{
+                  setSelectedIcon("facebook")
+                  window.open("https://www.facebook.com/nasar.masood.7", "_blank")
+                }}
                 style={{backgroundColor:selectedIcon=='facebook'?'#A53DFF':'#ffffff',cursor:'pointer',padding:'10px',borderRadius:'5px'}}> 
                     {selectedIcon=='facebook'?
                     <img
@@ -164,7 +176,11 @@ function HeroSection() {
             />}</div>
              <div 
                 role="button"
-                onClick={()=>setSelectedIcon("linkedin")}
+                onClick={()=>{setSelectedIcon("linkedin")
+                                    window.open("https://www.linkedin.com/in/nasar-masood?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B5OCzuCx7SAe%2FOzeWBupm8A%3D%3D", "_blank")
+
+
+                }}
                 style={{backgroundColor:selectedIcon=='linkedin'?'#A53DFF':'#ffffff',cursor:'pointer',padding:'5px',borderRadius:'5px'}}> 
                     {selectedIcon=='linkedin'?
                     <span className="font-bold  text-white text-[30px] leading-none  px-2 py-1 rounded-sm">
@@ -174,7 +190,11 @@ function HeroSection() {
 </span>}</div>
                <div 
                 role="button"
-                onClick={()=>setSelectedIcon("github")}
+                
+                onClick={()=>{setSelectedIcon("github")
+                 window.open("https://github.com/nasarmasood", "_blank")
+
+                }}
                 style={{backgroundColor:selectedIcon=='github'?'#A53DFF':'#ffffff',cursor:'pointer',padding:'8px',borderRadius:'5px'}}> 
                     {selectedIcon=='github'?
                     <img
@@ -191,25 +211,23 @@ function HeroSection() {
           <div className="w-[100%] lg:w-[55%] flex flex-col justify-center items-center">
             <div className="mt-[60px] lg:mt-[0px]">
               <p className="font-semibold text-[38px] leading-none">
-                I am Professional User Experience Designer
+                {content.aboutTitle}
               </p>
             </div>
             <div className="mt-[20px]">
               <p>
-                I design and develop services for customers specializing
-                creating stylish, modern websites, web services and online
-                stores. My passion is to design digital user experiences.
+                {content.aboutDescriptionP1}
               </p>
             </div>
             <div className="mt-[10px]">
               <p>
-                I design and develop services for customers specializing
-                creating stylish, modern websites, web services.
+                                {content.aboutDescriptionP2}
+
               </p>
             </div>
 
             <div className="w-[100%] flex flex-col lg:flex-row gap-[0px] lg:gap-2">
-              <div
+              {/* <div
                 role="button"
                 style={{
                   backgroundColor: "#A53DFF",
@@ -218,25 +236,31 @@ function HeroSection() {
                 }}
                 className="cursor-pointer px-[24px] py-[12px] rounded-3 inline-block mt-[20px]"
               >
-                <p className="font-medium text-[16px]">My Project</p>
-              </div>
-              <div
-                role="button"
-                style={{
-                  border: "2px solid #A53DFF",
-                  borderRadius: "8px",
-                  color: "#A53DFF",
-                  display:'flex',
-                  gap:'10px'
-                }}
-                className="cursor-pointer  px-[24px] py-[12px] rounded-3 inline-block mt-[20px]"
-              >
-                <div className=" w-[24px] h-[24px]"> <img
-              src="/images/downloadIcon.svg"
-              alt="download icon"
-              className="w-full h-full object-cover"
-            /></div><p className="font-semibold text-[16px]">Download CV</p>
-              </div>
+                <p className="font-medium text-[16px]">My Projects</p>
+              </div> */}
+            <div
+  role="button"
+  style={{
+    border: "2px solid #A53DFF",
+    borderRadius: "8px",
+    color: "#A53DFF",
+    display: "flex",
+    gap: "10px",
+  }}
+  className="cursor-pointer px-[24px] py-[12px] rounded-3 inline-block mt-[20px]"
+>
+  <a href="/files/Nasar_cv.pdf" download className="flex items-center gap-2">
+    <div className="w-[24px] h-[24px]">
+      <img
+        src="/images/downloadIcon.svg"
+        alt="download icon"
+        className="w-full h-full object-cover"
+      />
+    </div>
+    <p className="font-semibold text-[16px]">Download CV</p>
+  </a>
+</div>
+
             </div>
           </div>
         </div>
