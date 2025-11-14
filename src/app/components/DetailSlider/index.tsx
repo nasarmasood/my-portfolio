@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
+import { ProjectDetailType } from "../data/projectsDetail";
 
 const slides = [
   {
@@ -34,7 +35,8 @@ const slides = [
   },
 ];
 
-export default function DetailSlider() {
+
+export default function DetailSlider({project}:{project?:ProjectDetailType}) {
   return (
 <div className='container-wrapper bg-grey'>
         <div  className='container '> 
@@ -52,7 +54,7 @@ export default function DetailSlider() {
         pagination={{ clickable: true }}
         className="rounded-xl shadow-lg"
       >
-        {slides.map((slide, i) => (
+        {project?.sliders.map((slide, i) => (
           <SwiperSlide  key={i}>
             <div className="bg-white rounded-xl overflow-hidden shadow-md">
               {/* Top full-width image */}
@@ -61,11 +63,11 @@ export default function DetailSlider() {
               {/* Bottom two images: 30% + 70% */}
               <div className="flex gap-2 mt-2 px-2">
                 <div className="w-[30%] h-100 relative">
-                               <Image fill src="/images/ProjectDetailPic.png" alt='project pic'/>
+                               <Image fill src={slide.image.mobile} alt='project pic'/>
                   
                 </div>
                 <div className="w-[70%] relative" >
-                <Image fill src="/images/ProjectDetailPic.png" alt='project pic'/>
+                <Image fill src={slide.image.desktop} alt='project pic'/>
                  
                 </div>
               </div>
@@ -73,9 +75,9 @@ export default function DetailSlider() {
               {/* Text below */}
               <div className="p-6 text-center">
                 <h3 className="text-2xl font-bold text-brand-600 mb-2">
-                  {slide.title}
+                  {slide.text.title}
                 </h3>
-                <p className="text-gray-600 text-sm">{slide.description}</p>
+                <p className="text-gray-600 text-sm">{slide.text.description}</p>
               </div>
             </div>
           </SwiperSlide>

@@ -1,7 +1,7 @@
 import React from "react";
 import { FaReact } from "react-icons/fa";
-
-function DetailFeature() {
+import { ProjectDetailType } from "../data/projectsDetail";
+function DetailFeature({project}:{project?:ProjectDetailType}) {
   const skillsAarray = [
     {
       title: "React Js",
