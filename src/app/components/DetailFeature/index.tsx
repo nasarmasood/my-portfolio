@@ -1,81 +1,9 @@
 import React from "react";
 import { FaReact } from "react-icons/fa";
 import { ProjectDetailType } from "../data/projectsDetail";
+import { iconStyle } from "@/app/common";
 function DetailFeature({project}:{project?:ProjectDetailType}) {
-  const skillsAarray = [
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-  ];
+ 
   return (
     <div className="container-wrapper py-5">
       <div className="flex justify-center">
@@ -89,13 +17,14 @@ function DetailFeature({project}:{project?:ProjectDetailType}) {
       </div>
 
       <div className="container">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-5 mb-10">
-          {skillsAarray.map((skill, index) => {
+        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+          {project?.features.map((feature, index) => {
             return (
               <div className="item bg-grey px-5 shadow-md rounded-lg   shadow-md ">
                 <div key={index} className="flex items-center gap-2 py-3">
-                  {skill.logo}
-                  <p className="font-medium text-[16px]">{skill.title}</p>
+                  {React.cloneElement(feature.logo, { style: iconStyle })}                  
+                  
+                  <p className="font-medium text-[16px]">{feature.name}</p>
                 </div>
               </div>
             );

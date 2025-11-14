@@ -1,81 +1,9 @@
-import React from "react";
-import { FaReact } from "react-icons/fa";
+import React, { useState } from "react";
 import { ProjectDetailType } from "../data/projectsDetail";
+import { iconStyle } from "@/app/common";
 function DetailTechStack({project}:{project?:ProjectDetailType}) {
-  const skillsAarray = [
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-    {
-      title: "React Js",
-      logo: <FaReact style={{ color: "#A53DFF", fontSize: "50px" }} />,
-    },
-  ];
+ const [viewAll,setViewAll]=useState(false)
+
   return (
     <div className="container-wrapper bg-grey">
         <div className="py-5">
@@ -90,18 +18,45 @@ function DetailTechStack({project}:{project?:ProjectDetailType}) {
       </div>
 
       <div className="container">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-5 ">
-          {skillsAarray.map((skill, index) => {
+       
+         <div className="grid grid-cols-2 md:grid-cols-5 gap-5 ">
+          {project?.techStack.core.map((tech, index) => {
             return (
               <div className="item bg-grey px-5 shadow-md rounded-lg   shadow-md ">
                 <div key={index} className="flex items-center gap-2 py-3">
-                  {skill.logo}
-                  <p className="font-medium text-[16px]">{skill.title}</p>
+{React.cloneElement(tech.logo, { style: iconStyle })}                  
+<p className="font-medium text-[16px]">{tech.name}</p>
                 </div>
               </div>
             );
           })}
         </div>
+
+         {viewAll&&<div className="grid grid-cols-2 mt-3 md:grid-cols-5 gap-5 ">
+          {project?.techStack.additional.map((tech, index) => {
+            return (
+              <div className="item bg-grey px-5 shadow-md rounded-lg   shadow-md ">
+                <div key={index} className="flex items-center gap-2 py-3">
+{React.cloneElement(tech.logo, { style: iconStyle })}                  
+<p className="font-medium text-[16px]">{tech.name}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>}
+
+            <div
+                  onClick={()=>setViewAll((prev)=>!prev)}
+                role="button"
+                style={{
+                  backgroundColor: "#A53DFF",
+                  borderRadius: "8px",
+                  color: "#FFFFFF",
+                }}
+                className="cursor-pointer px-[24px] py-[12px]  inline-block mt-[20px]"
+              >
+                <p className="font-medium text-[16px]">   {viewAll ? 'View Less' : 'View All'}</p>
+              </div>
       </div>
       </div>
     </div>
