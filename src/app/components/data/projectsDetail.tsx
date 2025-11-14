@@ -203,62 +203,78 @@ additional: [
     text: { title:'Admin Portal', description:'Admins can oversee hospitals, doctors, patients, and system-wide operations efficiently.' } 
   },
 ],
-        features: [
-          { name: 'Admin, Doctor, Patient & Hospital Portals', src: '/images/features/portals.svg' },
-          { name: 'Online & Physical Appointment Booking', src: '/images/features/appointment.svg' },
-          { name: 'Customizable Appointment & Patient Forms', src: '/images/features/forms.svg' },
-          { name: 'Report Sharing & Doctor Instructions', src: '/images/features/report.svg' },
-          { name: 'Real-time Chat & Notifications', src: '/images/features/chat.svg' },
-          { name: 'Doctor & Patient History Tracking', src: '/images/features/history.svg' },
-          { name: 'Stripe Payment Integration', src: '/images/features/payment.svg' },
-          { name: 'Hospital Packages with Access Levels', src: '/images/features/packages.svg' },
-          { name: 'Athena & ACW Integrations', src: '/images/features/integrations.svg' },
-          { name: 'Scalable & Secure Architecture', src: '/images/features/security.svg' },
-        ],
-        techStack: {
-          core: [
-            { name: 'MongoDB', src: '/images/tech/mongodb.svg' },
-            { name: 'Express.js', src: '/images/tech/express.svg' },
-            { name: 'React.js', src: '/images/tech/react.svg' },
-            { name: 'Next.js', src: '/images/tech/nextjs.svg' },
-            { name: 'Node.js', src: '/images/tech/nodejs.svg' },
-          ],
-          additional: [
-            { name: 'Material UI (MUI)', src: '/images/tech/mui.svg' },
-            { name: 'Emotion', src: '/images/tech/emotion.svg' },
-            { name: 'Bootstrap Icons', src: '/images/tech/bootstrap.svg' },
-            { name: 'ApexCharts', src: '/images/tech/apexcharts.svg' },
-            { name: 'Chart.js', src: '/images/tech/chartjs.svg' },
-            { name: 'Redux Toolkit', src: '/images/tech/redux.svg' },
-            { name: 'React Hook Form', src: '/images/tech/react-hook-form.svg' },
-            { name: 'Yup Validation', src: '/images/tech/yup.svg' },
-            { name: 'Express', src: '/images/tech/express.svg' },
-            { name: 'Mongoose', src: '/images/tech/mongoose.svg' },
-            { name: 'Stripe', src: '/images/tech/stripe.svg' },
-            { name: 'Socket.IO', src: '/images/tech/socketio.svg' },
-            { name: 'Redis', src: '/images/tech/redis.svg' },
-            { name: 'Twilio', src: '/images/tech/twilio.svg' },
-            { name: 'AWS S3', src: '/images/tech/aws-s3.svg' },
-            { name: 'Athena Integration', src: '/images/tech/athena.svg' },
-            { name: 'ACW Integration', src: '/images/tech/acw.svg' },
-            { name: 'Firebase Admin', src: '/images/tech/firebase.svg' },
-            { name: 'Nodemailer', src: '/images/tech/nodemailer.svg' },
-            { name: 'Bull Queue', src: '/images/tech/bull.svg' },
-            { name: 'JWT Authentication', src: '/images/tech/jwt.svg' },
-            { name: 'Helmet.js', src: '/images/tech/helmet.svg' },
-            { name: 'Rate Limiter Flexible', src: '/images/tech/rate-limiter.svg' },
-            { name: 'Kendo React PDF', src: '/images/tech/kendo.svg' },
-            { name: 'React to PDF', src: '/images/tech/pdf.svg' },
-            { name: 'XLSX Data Export', src: '/images/tech/xlsx.svg' },
-            { name: 'FullCalendar', src: '/images/tech/fullcalendar.svg' },
-            { name: 'React Dropzone', src: '/images/tech/dropzone.svg' },
-            { name: 'React DatePicker', src: '/images/tech/datepicker.svg' },
-            { name: 'SunEditor', src: '/images/tech/editor.svg' },
-            { name: 'Nodemon', src: '/images/tech/nodemon.svg' },
-            { name: 'Prettier', src: '/images/tech/prettier.svg' },
-            { name: 'ESLint', src: '/images/tech/eslint.svg' },
-          ],
-        },
+         features: [
+  { name: 'Admin, Doctor, Patient & Hospital Portals', logo: <MdOutlineGroups /> },
+  { name: 'Online & Physical Appointment Booking', logo: <BsCalendarCheck /> },
+  { name: 'Customizable Appointment & Patient Forms', logo: <FaRegFileAlt /> },
+  { name: 'Report Sharing & Doctor Instructions', logo: <AiOutlineShareAlt /> },
+  { name: 'Real-time Chat & Notifications', logo: <BsChatDots /> },
+  { name: 'Doctor & Patient History Tracking', logo: <BsClockHistory /> },
+  { name: 'Stripe Payment Integration', logo: <FaStripe /> },
+  { name: 'Hospital Packages with Access Levels', logo: <MdOutlineLocalHospital /> },
+  { name: 'Athena & ACW Integrations', logo: <IoMdSync /> },
+  { name: 'Scalable & Secure Architecture', logo: <FaShieldAlt /> },
+],
+    techStack: {
+ core: [
+  { name: 'MongoDB', logo: <SiMongodb /> },
+  { name: 'Express.js', logo: <SiExpress /> },
+  { name: 'React.js', logo: <FaReact /> },
+  { name: 'Next.js', logo: <SiNextdotjs /> },
+  { name: 'Node.js', logo: <FaNodeJs /> },
+],
+
+additional: [
+  // Frontend/UI/Validation
+  { name: 'Material UI (MUI)', logo: <SiMui /> }, // Corrected: Used SiMui instead of SiMaterialui (assuming SiMui is the correct import for MUI)
+  { name: 'Emotion', logo: <FaReact /> }, // No direct import, keeping FaReact as a generic frontend tool (or could use a different placeholder)
+  { name: 'Bootstrap Icons', logo: <SiBootstrap /> },
+  { name: 'ApexCharts', logo: <MdStackedLineChart /> }, // Updated: Using MdStackedLineChart for chart visualization
+  { name: 'Chart.js', logo: <SiChartdotjs /> },
+  { name: 'Redux Toolkit', logo: <SiRedux /> },
+  { name: 'React Hook Form', logo: <FaReact /> }, // No direct import, using FaReact
+  { name: 'Yup Validation', logo: <TbChecks /> }, // Updated: Using TbChecks for a validation/check mark icon
+
+  // Backend/Database/Payments/Messaging
+  { name: 'Express', logo: <SiExpress /> },
+  { name: 'Mongoose', logo: <SiMongoose /> },
+  { name: 'Stripe', logo: <FaStripe /> },
+  { name: 'Socket.IO', logo: <SiSocketdotio /> },
+  { name: 'Redis', logo: <SiRedis /> },
+  { name: 'Twilio', logo: <SiTwilio /> },
+  { name: 'AWS S3', logo: <SiAmazons3 /> },
+
+  // AWS Integrations
+  { name: 'Athena Integration', logo: <SiAmazon /> },
+  { name: 'ACW Integration', logo: <SiAmazoncloudwatch /> },
+
+  // Utility/Serverless
+  { name: 'Firebase Admin', logo: <SiFirebase /> },
+  { name: 'Nodemailer', logo: <MdEmail /> }, // Updated: Using MdEmail for email functionality
+  { name: 'Bull Queue', logo: <MdOutlineQueue /> }, // Updated: Using MdOutlineQueue for queuing
+
+  // Security
+  { name: 'JWT Authentication', logo: <SiJsonwebtokens /> },
+  { name: 'Helmet.js', logo: <GiHelmet /> },
+  { name: 'Rate Limiter Flexible', logo: <TbGauge /> },
+
+  // Exporting/Documents
+  { name: 'Kendo React PDF', logo: <AiOutlineFilePdf /> },
+  { name: 'React to PDF', logo: <AiOutlineFilePdf /> },
+  { name: 'XLSX Data Export', logo: <AiOutlineFileExcel /> }, // Updated: Using AiOutlineFileExcel
+
+  // Components/Editors
+  { name: 'FullCalendar', logo: <SiGooglecalendar /> },
+  { name: 'React Dropzone', logo: <FaReact /> }, // No direct import, using FaReact
+  { name: 'React DatePicker', logo: <FaReact /> }, // No direct import, using FaReact
+  { name: 'SunEditor', logo: <SiEditorconfig /> }, // Using SiEditorconfig (closest match)
+
+  // DevTools
+  { name: 'Nodemon', logo: <SiNodemon /> },
+  { name: 'Prettier', logo: <SiPrettier /> },
+  { name: 'ESLint', logo: <SiEslint /> },
+],
+    },
         highlight: true,
       })
     ),

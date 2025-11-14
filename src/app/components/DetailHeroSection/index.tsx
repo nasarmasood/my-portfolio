@@ -1,5 +1,6 @@
 'use client'
 import React from 'react'
+import { motion } from 'framer-motion';
 import Image from 'next/image'
 import { ProjectDetailType } from '../data/projectsDetail'
 function DetailHeroSection({project}:{project?:ProjectDetailType}) {
@@ -13,16 +14,40 @@ function DetailHeroSection({project}:{project?:ProjectDetailType}) {
   return (
     <div className='container-wrapper bg-white'>
         <div  className='container '>
-<div className="flex flex-col md:flex-row gap-0 md:gap-5 ">
-            <div className='w-[100%] md:w-[30%] pt-[80px] pb-[40px] pl-4 md:pl-0'>
-                <div>
+<motion.div 
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  className="flex flex-col md:flex-row gap-0 md:gap-5 "
+>
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className='w-[100%] md:w-[30%] pt-[80px] pb-[40px] pl-4 md:pl-0'
+            >
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.3 }}
+                >
                     <p className='font-semibold text-[38px]'>{project?.name}</p>
-                </div>
-                <div>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.4 }}
+                >
                     <p className='font-normal text-[12px] text-grey-dark'>{project?.type}</p>
-                </div>
-                <div>
-                     <div
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.5 }}
+                >
+                     <motion.div
+                whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(165, 61, 255, 0.3)" }}
+                whileTap={{ scale: 0.95 }}
                 role="button"
                 onClick={handleRouting}
                 style={{
@@ -40,20 +65,26 @@ function DetailHeroSection({project}:{project?:ProjectDetailType}) {
               src="/images/dIcon.svg"
               alt="download icon"
             /></div>
-              </div>
-                </div>
+              </motion.div>
+                </motion.div>
              
                
                 
 
 
-            </div>
-            <div className="w-full md:w-[70%] relative h-[250px] md:h-auto" >
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, x: 30, scale: 0.9 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              whileHover={{ scale: 1.02 }}
+              className="w-full md:w-[70%] relative h-[250px] md:h-auto" 
+            >
              <Image fill src={project?.heroimagesrc||''} alt='project pic'/>
               
-            </div>
+            </motion.div>
          
-            </div>
+            </motion.div>
 
         </div>
     </div>

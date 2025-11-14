@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { content, Content } from "@/app/components/data/conent";
 
 function HeroSection() {
@@ -100,16 +101,36 @@ function HeroSection() {
  
 
   {/* Text Section */}
-  <div className="w-full md:w-[55%] text-center md:text-left">
-    <p className="font-semibold text-[40px] md:text-[72px] leading-tight">
-      Hello, I’m <span className="text-primary">{content.name}</span>
-    </p>
+  <motion.div 
+    initial={{ opacity: 0, x: -50 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    className="w-full md:w-[55%] text-center md:text-left"
+  >
+    <motion.p 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+      className="font-semibold text-[40px] md:text-[72px] leading-tight"
+    >
+      Hello, I'm <span className="text-primary">{content.name}</span>
+    </motion.p>
 
-    <p className="mt-4 text-[16px] text-neutral-700">
+    <motion.p 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.4 }}
+      className="mt-4 text-[16px] text-neutral-700"
+    >
      {content.intro}
-    </p>
+    </motion.p>
 
-    <div
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.4, delay: 0.6 }}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
       role="button"
       onClick={()=>scrollToSection('contact')}
       style={{
@@ -120,44 +141,87 @@ function HeroSection() {
       className="cursor-pointer px-[24px] py-[12px] inline-block mt-[20px]"
     >
       <p className="font-medium text-[16px]">Say Hello!</p>
-    </div>
+    </motion.div>
 
     {/* Stats Section */}
-    <div className="flex flex-col md:flex-row justify-center md:justify-between gap-4 mt-[50px] md:mt-[100px]">
-      <div className="bg-primary-light px-[20px] py-[10px] rounded-lg text-center">
+    <motion.div 
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.8 }}
+      className="flex flex-col md:flex-row justify-center md:justify-between gap-4 mt-[50px] md:mt-[100px]"
+    >
+      <motion.div 
+        whileHover={{ scale: 1.05, y: -5 }}
+        className="bg-primary-light px-[20px] py-[10px] rounded-lg text-center"
+      >
         <p className="font-semibold text-[24px] md:text-[26px]">2 Y+.</p>
         <p className="text-neutral-dark">Experience</p>
-      </div>
-      <div className="bg-primary-light px-[20px] py-[10px] rounded-lg text-center">
+      </motion.div>
+      <motion.div 
+        whileHover={{ scale: 1.05, y: -5 }}
+        className="bg-primary-light px-[20px] py-[10px] rounded-lg text-center"
+      >
         <p className="font-semibold text-[24px] md:text-[26px]">20+</p>
         <p className="text-neutral-dark">Projects Completed</p>
-      </div>
-      <div className="bg-primary-light px-[20px] py-[10px] rounded-lg text-center">
+      </motion.div>
+      <motion.div 
+        whileHover={{ scale: 1.05, y: -5 }}
+        className="bg-primary-light px-[20px] py-[10px] rounded-lg text-center"
+      >
         <p className="font-semibold text-[24px] md:text-[26px]">Full-Stack</p>
         <p className="text-neutral-dark">Expertise</p>
-      </div>
-    </div>
-  </div>
-   <div className="w-[60%] md:w-[40%] flex justify-center md:justify-end mb-10 md:mb-0">
-    <div className="relative w-[180px] h-[180px] md:w-[400px] md:h-[400px] rounded-full overflow-hidden shadow-lg bg-primary">
+      </motion.div>
+    </motion.div>
+  </motion.div>
+   <motion.div 
+    initial={{ opacity: 0, x: 50, scale: 0.8 }}
+    animate={{ opacity: 1, x: 0, scale: 1 }}
+    transition={{ duration: 0.6, delay: 0.3 }}
+    className="w-[60%] md:w-[40%] flex justify-center md:justify-end mb-10 md:mb-0"
+  >
+    <motion.div 
+      whileHover={{ scale: 1.05, rotate: 5 }}
+      className="relative w-[180px] h-[180px] md:w-[400px] md:h-[400px] rounded-full overflow-hidden shadow-lg bg-primary"
+    >
       <img
         src="/images/mypic.png"
         alt="My Picture"
         className="w-full h-full object-cover"
       />
-    </div>
-  </div>
+    </motion.div>
+  </motion.div>
 </div>
 
-        <div className="flex flex-col lg:flex-row justify-between border border-black   item-center shadow-md rounded-lg py-[80px] px-[40px] mt-[50px] lg:mt-[200px]">
-          <div className="bg-grey  px-5 shadow-md rounded-lg  w-[100%] lg:w-[40%] relative">
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col lg:flex-row justify-between border border-black   item-center shadow-md rounded-lg py-[80px] px-[40px] mt-[50px] lg:mt-[200px]"
+        >
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            whileHover={{ scale: 1.02 }}
+            className="bg-grey  px-5 shadow-md rounded-lg  w-[100%] lg:w-[40%] relative"
+          >
             <img
               src="/images/mypictransparent.png"
               alt="My Picture"
               className="w-full h-full object-cover"
             />
-            <div className="absolute bg-white flex gap-5 border-4 border-grey px-8 py-2 rounded-lg bottom-[-30px]  left-[30px] lg:left-[70px]">
-                <div 
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="absolute bg-white flex gap-5 border-4 border-grey px-8 py-2 rounded-lg bottom-[-30px]  left-[30px] lg:left-[70px]"
+            >
+                <motion.div 
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
                 role="button"
                 onClick={()=>{
                   setSelectedIcon("facebook")
@@ -173,8 +237,10 @@ function HeroSection() {
               src="/images/facebookprimary.svg"
               alt="My Picture"
               className="w-full h-full object-cover"
-            />}</div>
-             <div 
+            />}</motion.div>
+             <motion.div 
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
                 role="button"
                 onClick={()=>{setSelectedIcon("linkedin")
                                     window.open("https://www.linkedin.com/in/nasar-masood?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B5OCzuCx7SAe%2FOzeWBupm8A%3D%3D", "_blank")
@@ -187,8 +253,10 @@ function HeroSection() {
   in
 </span>:             <span className="font-bold text-[30px] text-primary leading-none  px-2 py-1 rounded-sm">
   in
-</span>}</div>
-               <div 
+</span>}</motion.div>
+               <motion.div 
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
                 role="button"
                 
                 onClick={()=>{setSelectedIcon("github")
@@ -205,28 +273,58 @@ function HeroSection() {
               src="/images/githubprimary.svg"
               alt="My Picture"
               className="w-6 h-6 object-cover"
-            />}</div>
-            </div>
-          </div>
-          <div className="w-[100%] lg:w-[55%] flex flex-col justify-center items-center">
-            <div className="mt-[60px] lg:mt-[0px]">
+            />}</motion.div>
+            </motion.div>
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="w-[100%] lg:w-[55%] flex flex-col justify-center items-center"
+          >
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+              className="mt-[60px] lg:mt-[0px]"
+            >
               <p className="font-semibold text-[38px] leading-none">
                 {content.aboutTitle}
               </p>
-            </div>
-            <div className="mt-[20px]">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              className="mt-[20px]"
+            >
               <p>
                 {content.aboutDescriptionP1}
               </p>
-            </div>
-            <div className="mt-[10px]">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+              className="mt-[10px]"
+            >
               <p>
                                 {content.aboutDescriptionP2}
 
               </p>
-            </div>
+            </motion.div>
 
-            <div className="w-[100%] flex flex-col lg:flex-row gap-[0px] lg:gap-2">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.3 }}
+              className="w-[100%] flex flex-col lg:flex-row gap-[0px] lg:gap-2"
+            >
               {/* <div
                 role="button"
                 style={{
@@ -238,32 +336,34 @@ function HeroSection() {
               >
                 <p className="font-medium text-[16px]">My Projects</p>
               </div> */}
-            <div
-  role="button"
-  style={{
-    border: "2px solid #A53DFF",
-    borderRadius: "8px",
-    color: "#A53DFF",
-    display: "flex",
-    gap: "10px",
-  }}
-  className="cursor-pointer px-[24px] py-[12px] rounded-3 inline-block mt-[20px]"
->
-  <a href="/files/Nasar_cv.pdf" download className="flex items-center gap-2">
-    <div className="w-[24px] h-[24px]">
-      <img
-        src="/images/downloadIcon.svg"
-        alt="download icon"
-        className="w-full h-full object-cover"
-      />
-    </div>
-    <p className="font-semibold text-[16px]">Download CV</p>
-  </a>
-</div>
+            <motion.div
+              whileHover={{ scale: 1.05, backgroundColor: "#A53DFF", color: "#FFFFFF" }}
+              whileTap={{ scale: 0.95 }}
+              role="button"
+              style={{
+                border: "2px solid #A53DFF",
+                borderRadius: "8px",
+                color: "#A53DFF",
+                display: "flex",
+                gap: "10px",
+              }}
+              className="cursor-pointer px-[24px] py-[12px] rounded-3 inline-block mt-[20px] transition-colors"
+            >
+              <a href="/files/Nasar_cv.pdf" download className="flex items-center gap-2">
+                <div className="w-[24px] h-[24px]">
+                  <img
+                    src="/images/downloadIcon.svg"
+                    alt="download icon"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <p className="font-semibold text-[16px]">Download CV</p>
+              </a>
+            </motion.div>
 
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
 
         {/* </div> */}
       </div>

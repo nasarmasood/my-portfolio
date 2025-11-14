@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 function FooterSection() {
 
     const [visibleCount, setVisibleCount] = useState(6);
@@ -83,41 +84,82 @@ function FooterSection() {
 
 
   return (
-    <div className="container-wrapper bg-content-dark">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="container-wrapper bg-content-dark"
+    >
       <div className='pb-10'>
         <div className='container'>
            
-           <div className="flex items-center flex-col md:flex-row justify-between gap-3 pt-20">
-            <div className="flex gap-2 items-center">
-            <div
+           <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex items-center flex-col md:flex-row justify-between gap-3 pt-20"
+          >
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="flex gap-2 items-center"
+            >
+            <motion.div
+              whileHover={{ scale: 1.1, rotate: 360 }}
+              transition={{ duration: 0.5 }}
               className="w-[56px] h-[56px] 
             bg-primary 
             rounded-full flex justify-center items-center text-primary-white p-[0] m-[0] font-poppins font-medium text-[24px]"
             >
               N
-            </div>
+            </motion.div>
             <div>
               <p className="font-semibold text-[32px] text-primary-white ">Nasar</p>
             </div>
-          </div>
-          <div className='flex gap-5'>
-              <p role='button' onClick={()=>scrollToSection('home')}  className="font-regular text-[16px] text-primary-white cursor-pointer">Home</p>
-              <p role='button'  onClick={()=>scrollToSection('experience')} className="font-regular text-[16px] text-primary-white cursor-pointer">Experience</p>
-              <p role='button'  onClick={()=>scrollToSection('skills')} className="font-regular text-[16px] text-primary-white cursor-pointer">Skills</p>
-              <p role='button'  onClick={()=>scrollToSection('projects')} className="font-regular text-[16px] text-primary-white cursor-pointer">Projects</p>
-              <p role='button'  onClick={()=>scrollToSection('contact')} className="font-regular text-[16px] text-primary-white cursor-pointer">Contact</p>
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className='flex gap-5'
+          >
+              <motion.p 
+                whileHover={{ scale: 1.1, y: -2 }}
+                role='button' onClick={()=>scrollToSection('home')}  className="font-regular text-[16px] text-primary-white cursor-pointer">Home</motion.p>
+              <motion.p 
+                whileHover={{ scale: 1.1, y: -2 }}
+                role='button'  onClick={()=>scrollToSection('experience')} className="font-regular text-[16px] text-primary-white cursor-pointer">Experience</motion.p>
+              <motion.p 
+                whileHover={{ scale: 1.1, y: -2 }}
+                role='button'  onClick={()=>scrollToSection('skills')} className="font-regular text-[16px] text-primary-white cursor-pointer">Skills</motion.p>
+              <motion.p 
+                whileHover={{ scale: 1.1, y: -2 }}
+                role='button'  onClick={()=>scrollToSection('projects')} className="font-regular text-[16px] text-primary-white cursor-pointer">Projects</motion.p>
+              <motion.p 
+                whileHover={{ scale: 1.1, y: -2 }}
+                role='button'  onClick={()=>scrollToSection('contact')} className="font-regular text-[16px] text-primary-white cursor-pointer">Contact</motion.p>
           
-          </div>
-          <div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
                           <p className="font-regular text-[16px] text-primary-white ">Copyright © 2022 Picto.</p>
 
-          </div>
-            </div>
+          </motion.div>
+            </motion.div>
            
 
         </div>
         </div>
-    </div>
+    </motion.div>
   )
 }
 

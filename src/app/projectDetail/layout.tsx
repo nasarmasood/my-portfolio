@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { Suspense } from 'react';
 
-function layout({
+// You can optionally define a loading component (e.g., a simple spinner)
+const Loading = () => <div>Loading...</div>;
+
+function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <div>{children}</div>
-  )
+    // Wrap the children in a Suspense boundary
+    <Suspense fallback={<Loading />}>
+      <div>{children}</div>
+    </Suspense>
+  );
 }
 
-export default layout
+export default Layout;

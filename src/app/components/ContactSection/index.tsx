@@ -1,5 +1,6 @@
 'use client'
 import React from 'react'
+import { motion } from 'framer-motion';
 import { CiLocationOn } from "react-icons/ci";
 import { useState } from 'react';
 type contactOption= 'email'|'address'|'phone'
@@ -12,18 +13,41 @@ function ContactSection() {
 const isSelected = (option: string) => selectedContactOption === option;
   return (
     <div id='contact' className='container-wrapper bg-white'>
-        <div  className='container shadow-[0px_50px_12px_0px_rgba(0,_0,_0,_0.12)] '>
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className='container shadow-[0px_50px_12px_0px_rgba(0,_0,_0,_0.12)] '
+        >
 <div className="p-[40px] flex flex-col md:flex-row items-center gap-5">
-            <div>
-                <div>
-                    <p className='font-semibold text-[38px]'>Let’s discuss your Project</p>
-                </div>
-                <div>
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4 }}
+                >
+                    <p className='font-semibold text-[38px]'>Let's discuss your Project</p>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.1 }}
+                >
                    <p className='text-[18px] text-grey-dark'>There are many variations of passages of Lorem Ipsu available. but the majority have suffered alte.</p>
-                </div>
-                <div 
+                </motion.div>
+                <motion.div 
+                whileHover={{ scale: 1.02, x: 5 }}
+                whileTap={{ scale: 0.98 }}
                 role='button' onClick={()=>setSelectedContactOption('address')}
-className={`flex items-center p-[12px] gap-2  rounded-[5px] mt-4 w-[70%]
+className={`flex items-center p-[12px] gap-2  rounded-[5px] mt-4 w-[70%] cursor-pointer
                     ${selectedContactOption=='address' ? 'shadow-[0px_12px_64px_0px_rgba(28,25,25,0.12)]' : ''}`}   
                                  >
                     <div className='flex justify-center items-center p-[12px] bg-primary-light rounded-[5px] '><CiLocationOn style={{fontSize:'30px'}}/></div>
@@ -34,8 +58,11 @@ className={`flex items-center p-[12px] gap-2  rounded-[5px] mt-4 w-[70%]
                     </div>
 
 
-                </div>
-                <div role='button' onClick={()=>setSelectedContactOption('email')} className={`flex items-center p-[12px] gap-2  rounded-[5px] mt-4 w-[70%]
+                </motion.div>
+                <motion.div 
+                whileHover={{ scale: 1.02, x: 5 }}
+                whileTap={{ scale: 0.98 }}
+                role='button' onClick={()=>setSelectedContactOption('email')} className={`flex items-center p-[12px] gap-2  rounded-[5px] mt-4 w-[70%] cursor-pointer
                     ${selectedContactOption=='email' ? 'shadow-[0px_12px_64px_0px_rgba(28,25,25,0.12)]' : ''}`}>
                     <div className='flex justify-center items-center p-[12px] bg-primary-light rounded-[5px] '><CiLocationOn style={{fontSize:'30px'}}/></div>
                     <div>
@@ -45,8 +72,11 @@ className={`flex items-center p-[12px] gap-2  rounded-[5px] mt-4 w-[70%]
                     </div>
 
 
-                </div>
-                <div role='button' onClick={()=>setSelectedContactOption('phone')} className={`flex items-center p-[12px] gap-2  rounded-[5px] mt-4 w-[70%]
+                </motion.div>
+                <motion.div 
+                whileHover={{ scale: 1.02, x: 5 }}
+                whileTap={{ scale: 0.98 }}
+                role='button' onClick={()=>setSelectedContactOption('phone')} className={`flex items-center p-[12px] gap-2  rounded-[5px] mt-4 w-[70%] cursor-pointer
                     ${selectedContactOption=='phone' ? 'shadow-[0px_12px_64px_0px_rgba(28,25,25,0.12)]' : ''}`}>
                     <div className='flex justify-center items-center p-[12px] bg-primary-light rounded-[5px] '><CiLocationOn style={{fontSize:'30px'}}/></div>
                     <div>
@@ -56,9 +86,17 @@ className={`flex items-center p-[12px] gap-2  rounded-[5px] mt-4 w-[70%]
                     </div>
 
 
-                </div>
-                  <div className="flex gap-5 py-2 rounded-lg mt-4">
-                <div 
+                </motion.div>
+                  <motion.div 
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className="flex gap-5 py-2 rounded-lg mt-4"
+                  >
+                <motion.div 
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
                 role="button"
                 onClick={()=>setSelectedIcon("facebook")}
                 style={{backgroundColor:selectedIcon=='facebook'?'#A53DFF':'',cursor:'pointer',padding:'10px',borderRadius:'5px'}}> 
@@ -71,8 +109,10 @@ className={`flex items-center p-[12px] gap-2  rounded-[5px] mt-4 w-[70%]
               src="/images/facebookprimary.svg"
               alt="My Picture"
               className="w-full h-full object-cover"
-            />}</div>
-             <div 
+            />}</motion.div>
+             <motion.div 
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
                 role="button"
                 onClick={()=>setSelectedIcon("linkedin")}
                 style={{backgroundColor:selectedIcon=='linkedin'?'#A53DFF':'',cursor:'pointer',padding:'5px',borderRadius:'5px'}}> 
@@ -81,8 +121,10 @@ className={`flex items-center p-[12px] gap-2  rounded-[5px] mt-4 w-[70%]
   in
 </span>:             <span className="font-bold text-[30px] text-primary leading-none  px-2 py-1 rounded-sm">
   in
-</span>}</div>
-               <div 
+</span>}</motion.div>
+               <motion.div 
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
                 role="button"
                 onClick={()=>setSelectedIcon("github")}
                 style={{backgroundColor:selectedIcon=='github'?'#A53DFF':'',cursor:'pointer',padding:'8px',borderRadius:'5px'}}> 
@@ -95,18 +137,28 @@ className={`flex items-center p-[12px] gap-2  rounded-[5px] mt-4 w-[70%]
               src="/images/githubprimary.svg"
               alt="My Picture"
               className="w-6 h-6 object-cover"
-            />}</div>
-            </div>
+            />}</motion.div>
+            </motion.div>
              
                 
 
 
-            </div>
-            <div>
-                 <div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+                 <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4 }}
+                 >
                     <p className='text-grey-dark text-[18px]'>There are many variations of passages of Lorem Ipsu available,
 but the majority have suffered alte.</p>
-                 </div>
+                 </motion.div>
                 <div className='mt-7'>
                     <input
   type="text"
@@ -186,8 +238,16 @@ but the majority have suffered alte.</p>
 />
 
                 </div>
-                <div className='mt-8'>
-                    <div
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.3 }}
+                  className='mt-8'
+                >
+                    <motion.div
+                whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(165, 61, 255, 0.3)" }}
+                whileTap={{ scale: 0.95 }}
                 role="button"
                 style={{
                     display:'flex',
@@ -204,12 +264,12 @@ but the majority have suffered alte.</p>
               src="/images/dIcon.svg"
               alt="download icon"
             /></div>
-              </div>
-                </div>
-            </div>
+              </motion.div>
+                </motion.div>
+            </motion.div>
             </div>
 
-        </div>
+        </motion.div>
     </div>
   )
 }
