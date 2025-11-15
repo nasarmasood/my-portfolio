@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { content, Content } from "@/app/components/data/conent";
+import GradientGlow from "../GradientGlow";
 
 function HeroSection() {
     const [selectedIcon,setSelectedIcon]=useState<string>()
@@ -16,7 +17,14 @@ function HeroSection() {
 
   return (
     <div id="home" style={{paddingTop:'30px'}} className="container-wrapper relative overflow-hidden">
-        <div className="absolute w-[871px] h-[871.21px] left-[80%] top-[-803px] rotate-[130.44deg] bg-[radial-gradient(ellipse,_#000000_20%,_#DA4DF1_40%)] opacity-40 blur-3xl z-[-1] pointer-events-none">
+      {/* Enhanced Gradient Glows */}
+      <GradientGlow color="purple" size="large" position={{ top: '10%', right: '5%' }} opacity={0.6} />
+      <GradientGlow color="green" size="large" position={{ top: '30%', right: '10%' }} opacity={0.5} />
+      <GradientGlow color="orange" size="medium" position={{ bottom: '20%', left: '-5%' }} opacity={0.6} />
+      <GradientGlow color="cyan" size="small" position={{ top: '50%', left: '50%' }} opacity={0.4} />
+      
+      {/* Keep existing glows for compatibility */}
+      <div className="absolute w-[871px] h-[871.21px] left-[80%] top-[-803px] rotate-[130.44deg] bg-[radial-gradient(ellipse,_#000000_20%,_#DA4DF1_40%)] opacity-40 blur-3xl z-[-1] pointer-events-none">
 </div>
    <div className="absolute w-[1044.32px] h-[1044.32px] left-[90%] top-[191px] rotate-[130.44deg] bg-[radial-gradient(ellipse,_#C4F5E9_70%)] opacity-40 blur-3xl z-[-1] pointer-events-none">
 </div>
@@ -37,7 +45,7 @@ function HeroSection() {
   {/* content */}
 </div>
 
-      <div className="container py-[20px]">
+      <div className="container py-[20px] relative z-10">
         {/*         <div 
             className='w-[56px] h-[56px] 
             bg-primary 

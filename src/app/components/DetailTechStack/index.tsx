@@ -3,12 +3,17 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ProjectDetailType } from "../data/projectsDetail";
 import { iconStyle } from "@/app/common";
+import GradientGlow from "../GradientGlow";
 function DetailTechStack({project}:{project?:ProjectDetailType}) {
  const [viewAll,setViewAll]=useState(false)
 
   return (
-    <div className="container-wrapper bg-grey">
-        <div className="py-5">
+    <div className="container-wrapper bg-grey relative overflow-hidden">
+      {/* Gradient Glows */}
+      <GradientGlow color="purple" size="large" position={{ top: '20%', left: '8%' }} opacity={0.5} />
+      <GradientGlow color="green" size="medium" position={{ bottom: '25%', right: '10%' }} opacity={0.4} />
+      
+        <div className="py-5 relative z-10">
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

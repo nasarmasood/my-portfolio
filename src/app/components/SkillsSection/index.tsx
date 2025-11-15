@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaReact } from "react-icons/fa";
+import GradientGlow from "../GradientGlow";
 
 function SkillsSection() {
   const skillsAarray = [
@@ -79,13 +80,18 @@ function SkillsSection() {
     },
   ];
   return (
-    <div id='skills' className="container-wrapper py-5">
+    <div id='skills' className="container-wrapper py-5 relative overflow-hidden">
+      {/* Gradient Glows */}
+      <GradientGlow color="green" size="large" position={{ top: '30%', right: '5%' }} opacity={0.4} />
+      <GradientGlow color="purple" size="medium" position={{ bottom: '20%', left: '8%' }} opacity={0.5} />
+      <GradientGlow color="pink" size="small" position={{ top: '50%', left: '50%' }} opacity={0.3} />
+      
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="flex justify-center"
+        className="flex justify-center relative z-10"
       >
         <div className="w-[500px] text-center mt-10 mb-10">
           <motion.p 
@@ -108,7 +114,7 @@ function SkillsSection() {
         </div>
       </motion.div>
 
-      <div className="container">
+      <div className="container relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-5 mb-10">
           {skillsAarray.map((skill, index) => {
             return (

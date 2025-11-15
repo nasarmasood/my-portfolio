@@ -2,6 +2,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import GradientGlow from '../GradientGlow';
 function ExperienceSection() {
 
     const [visibleCount, setVisibleCount] = useState(6);
@@ -75,8 +76,12 @@ function ExperienceSection() {
 
 
   return (
-    <div id='experience' className="container-wrapper bg-grey">
-      <div className='pb-10'>
+    <div id='experience' className="container-wrapper bg-grey relative overflow-hidden">
+      {/* Gradient Glows */}
+      <GradientGlow color="orange" size="large" position={{ top: '25%', left: '12%' }} opacity={0.4} />
+      <GradientGlow color="blue" size="medium" position={{ bottom: '30%', right: '10%' }} opacity={0.5} />
+      
+      <div className='pb-10 relative z-10'>
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

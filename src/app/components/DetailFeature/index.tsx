@@ -4,16 +4,22 @@ import { motion } from "framer-motion";
 import { FaReact } from "react-icons/fa";
 import { ProjectDetailType } from "../data/projectsDetail";
 import { iconStyle } from "@/app/common";
+import GradientGlow from "../GradientGlow";
 function DetailFeature({project}:{project?:ProjectDetailType}) {
  
   return (
-    <div className="container-wrapper py-5">
+    <div className="container-wrapper py-5 relative overflow-hidden">
+      {/* Gradient Glows */}
+      <GradientGlow color="pink" size="large" position={{ top: '25%', right: '5%' }} opacity={0.5} />
+      <GradientGlow color="cyan" size="medium" position={{ bottom: '20%', left: '8%' }} opacity={0.4} />
+      <GradientGlow color="orange" size="small" position={{ top: '50%', left: '50%' }} opacity={0.3} />
+      
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="flex justify-center"
+        className="flex justify-center relative z-10"
       >
         <div className="w-[500px] text-center mt-5 mb-5">
           <motion.p 
@@ -36,7 +42,7 @@ function DetailFeature({project}:{project?:ProjectDetailType}) {
         </div>
       </motion.div>
 
-      <div className="container">
+      <div className="container relative z-10">
         <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
           {project?.features.map((feature, index) => {
             return (

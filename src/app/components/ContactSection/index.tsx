@@ -3,6 +3,7 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import { CiLocationOn } from "react-icons/ci";
 import { useState } from 'react';
+import GradientGlow from '../GradientGlow';
 type contactOption= 'email'|'address'|'phone'
 function ContactSection() {
         const [selectedIcon,setSelectedIcon]=useState<string>()
@@ -12,13 +13,18 @@ function ContactSection() {
 
 const isSelected = (option: string) => selectedContactOption === option;
   return (
-    <div id='contact' className='container-wrapper bg-white'>
+    <div id='contact' className='container-wrapper bg-white relative overflow-hidden'>
+      {/* Gradient Glows */}
+      <GradientGlow color="purple" size="large" position={{ top: '20%', left: '5%' }} opacity={0.5} />
+      <GradientGlow color="pink" size="medium" position={{ bottom: '15%', right: '8%' }} opacity={0.4} />
+      <GradientGlow color="cyan" size="small" position={{ top: '50%', left: '50%' }} opacity={0.3} />
+      
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className='container shadow-[0px_50px_12px_0px_rgba(0,_0,_0,_0.12)] '
+          className='container shadow-[0px_50px_12px_0px_rgba(0,_0,_0,_0.12)] relative z-10'
         >
 <div className="p-[40px] flex flex-col md:flex-row items-center gap-5">
             <motion.div

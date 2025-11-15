@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { userAgent } from 'next/server';
 import { projectsData } from '../data/projects';
+import GradientGlow from '../GradientGlow';
 function ProjectSection() {
 
     const [visibleCount, setVisibleCount] = useState(6);
@@ -24,8 +25,13 @@ function ProjectSection() {
 
 
   return (
-    <div id='projects' className="container-wrapper bg-grey">
-      <div className='pb-10'>
+    <div id='projects' className="container-wrapper bg-grey relative overflow-hidden">
+      {/* Gradient Glows */}
+      <GradientGlow color="purple" size="large" position={{ top: '20%', left: '10%' }} opacity={0.5} />
+      <GradientGlow color="blue" size="medium" position={{ top: '60%', right: '15%' }} opacity={0.4} />
+      <GradientGlow color="cyan" size="small" position={{ bottom: '10%', left: '50%' }} opacity={0.3} />
+      
+      <div className='pb-10 relative z-10'>
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

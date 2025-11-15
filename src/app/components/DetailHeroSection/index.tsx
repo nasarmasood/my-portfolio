@@ -3,6 +3,7 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import Image from 'next/image'
 import { ProjectDetailType } from '../data/projectsDetail'
+import GradientGlow from '../GradientGlow'
 function DetailHeroSection({project}:{project?:ProjectDetailType}) {
        
   const handleRouting=()=>
@@ -12,8 +13,12 @@ function DetailHeroSection({project}:{project?:ProjectDetailType}) {
   }
 
   return (
-    <div className='container-wrapper bg-white'>
-        <div  className='container '>
+    <div className='container-wrapper bg-white relative overflow-hidden'>
+      {/* Gradient Glows */}
+      <GradientGlow color="purple" size="large" position={{ top: '30%', right: '10%' }} opacity={0.5} />
+      <GradientGlow color="blue" size="medium" position={{ bottom: '20%', left: '5%' }} opacity={0.4} />
+      
+        <div  className='container relative z-10'>
 <motion.div 
   initial={{ opacity: 0, y: 30 }}
   animate={{ opacity: 1, y: 0 }}
