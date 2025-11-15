@@ -8,6 +8,8 @@ export interface ProjectDataType {
   highlight?: boolean; // whether this project is featured
 }
 
+
+
 export const projectsData: ProjectDataType[] = [
   {
     id: 1,
@@ -22,7 +24,7 @@ export const projectsData: ProjectDataType[] = [
     name: 'Workscape',
     type: 'Web App & Website',
     description: 'Helps lawyers prepare strong cases for disabled clients.',
-    src: '/images/projectpic.svg',
+    src: '/images/project_pics/workscape/logo.svg',
     highlight: true,
   },
   {
@@ -30,7 +32,7 @@ export const projectsData: ProjectDataType[] = [
     name: 'Hajj Project',
     type: 'Operations Management',
     description: 'Manage buses, locations, routes, and timings for Hajj operations.',
-    src: '/images/projectpic.svg',
+    src: '/images/project_pics/hajj/logo.svg',
     highlight: true,
   },
   {
@@ -38,14 +40,15 @@ export const projectsData: ProjectDataType[] = [
     name: 'Feedback Uplift',
     type: 'Web App',
     description: 'Assists companies in collecting customer feedback efficiently.',
-    src: '/images/projectpic.svg',
+    src: '/images/project_pics/feedbackuplift/logo.svg',
+    
   },
   {
     id: 5,
     name: 'Solar Panel',
     type: 'Management System',
     description: 'Manage solar panel installations and monitor performance.',
-    src: '/images/projectpic.svg',
+    src: '/images/project_pics/solarpanel/logo.svg',
   },
   {
     id: 6,
@@ -66,7 +69,7 @@ export const projectsData: ProjectDataType[] = [
     name: 'Alfain Website',
     type: 'Website',
     description: 'Simple corporate website for a company.',
-    src: '/images/projectpic.svg',
+    src: '/images/project_pics/alfain/logo.svg',
   },
   {
     id: 9,
@@ -81,7 +84,7 @@ export const projectsData: ProjectDataType[] = [
     name: 'Tower',
     type: 'Web & Mobile App',
     description: 'Manage residential buildings efficiently.',
-    src: '/images/projectpic.svg',
+    src: '/images/project_pics/tower/logo.webp',
     highlight: true,
   },
   {

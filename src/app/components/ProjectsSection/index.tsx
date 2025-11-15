@@ -63,7 +63,7 @@ function ProjectSection() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="item bg-white shadow-md rounded-lg rounded-2 cursor-pointer"
             >
-              <div className="w-full h-[200px]">
+              <div className="w-full h-[200px] px-2">
                 <img
                   src={project.src}
                   alt="project pic"
