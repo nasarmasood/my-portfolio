@@ -63,7 +63,7 @@ function ProjectSection() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="item bg-white shadow-md rounded-lg rounded-2 cursor-pointer"
             >
-              <div className="w-full h-[200px] px-2">
+              <div style={{backgroundColor:project.id==6||project.id==7?'#274472':''}} className="w-full h-[200px] px-2 py-4">
                 <img
                   src={project.src}
                   alt="project pic"

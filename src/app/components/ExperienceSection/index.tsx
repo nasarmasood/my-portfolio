@@ -110,8 +110,18 @@ function ExperienceSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla purus arcu, varius eget velit non, laoreet imperdiet orci. Mauris ultrices eget lorem ac vestibulum. 
-                Suspendis imperdiet,
+                I am a MERN Stack Developer with 2 years of hands-on experience at {" "} 
+  <a
+    href="https://alfain.co" 
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-purple-600 underline hover:text-purple-800"
+  >
+    Alfain Technologies
+  </a>{" "}
+I build full-stack, scalable, and high-performance web applications using MongoDB,  
+Express.js, React.js, and Node.js. My work focuses on clean UI, efficient APIs,  
+and delivering smooth user experiences.
             </motion.p>
             <motion.div 
               initial={{ opacity: 0, x: 30 }}
@@ -121,8 +131,21 @@ function ExperienceSection() {
               whileHover={{ scale: 1.05, y: -5 }}
               className="bg-white shadow-md rounded-lg p-4 border-l-4 border-primary"
             >
-                <p className="font-semibold text-[24px] ">User Experience (UX)</p>
-                <p className="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla purus arcu, varius eget velit non, laoreet imperdiet orci. Mauris ultrices eget lorem ac vestibulum.</p>
+                <p className="font-semibold text-[24px] ">Junior Software Engineer</p>
+<p className="font-semibold text-[24px]">
+  at{" "}
+  <a
+    href="https://alfain.co" 
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-purple-600 underline hover:text-purple-800"
+  >
+    Alfain Technologies
+  </a>{" "}
+  (2+ Years)
+</p>                <p className="mt-2">Working as a full-stack developer using the MERN stack, developing responsive UIs,  
+building RESTful APIs, integrating authentication systems, optimizing performance,  
+and collaborating in agile development teams to deliver production-ready solutions.</p>
                 </motion.div>
             </motion.div>
            

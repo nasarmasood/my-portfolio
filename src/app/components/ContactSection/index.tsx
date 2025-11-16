@@ -1,277 +1,222 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion';
 import { CiLocationOn } from "react-icons/ci";
-import { useState } from 'react';
-type contactOption= 'email'|'address'|'phone'
-function ContactSection() {
-        const [selectedIcon,setSelectedIcon]=useState<string>()
-        const [selectedContactOption,setSelectedContactOption]=useState<contactOption>()
-    
-        const shadowClass = 'shadow-[0px_12px_64px_0px_rgba(28,25,25,0.12)]';
 
-const isSelected = (option: string) => selectedContactOption === option;
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import emailjs from "emailjs-com";
+
+type contactOption = 'email' | 'address' | 'phone';
+
+const validationSchema = Yup.object().shape({
+  name: Yup.string().required("Name is required"),
+  email: Yup.string().email("Invalid email").required("Email is required"),
+  subject: Yup.string().required("Subject is required"),
+  message: Yup.string().required("Message is required"),
+});
+
+function ContactSection() {
+  const [selectedIcon, setSelectedIcon] = useState<string>();
+  const [selectedContactOption, setSelectedContactOption] = useState<contactOption>();
+
+  const initialValues = {
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  };
+
+  const sendEmail = (values: any, { resetForm }: any) => {
+    emailjs.send(
+      "YOUR_SERVICE_ID",
+      "YOUR_TEMPLATE_ID",
+      {
+        name: values.name,
+        email: values.email,
+        subject: values.subject,
+        message: values.message,
+        to_email: "nasarmasood111@gmail.com",
+      },
+      "YOUR_PUBLIC_KEY"
+    )
+      .then(() => {
+        alert("Message sent successfully!");
+        resetForm();
+      })
+      .catch((error) => {
+        alert("Failed to send message. Error: " + error.text);
+      });
+  };
+
   return (
     <div id='contact' className='container-wrapper bg-white'>
-        <motion.div 
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className='container shadow-[0px_50px_12px_0px_rgba(0,_0,_0,_0.12)] '
-        >
-<div className="p-[40px] flex flex-col md:flex-row items-center gap-5">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className='container shadow-[0px_50px_12px_0px_rgba(0,_0,_0,_0.12)] '
+      >
+        <div className="p-[40px] flex flex-col md:flex-row items-center gap-5">
+
+          {/* LEFT SIDE */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className='w-[40%]'
+          >
+            <p className='font-semibold text-[38px] mb-3'>Contact Me</p>
+            <p className='text-[18px] text-grey-dark'>Contact Details</p>
+
+            {/* ADDRESS */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.02, x: 5 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => setSelectedContactOption('address')}
+              className={`flex items-center p-[12px] gap-2 rounded-[5px] mt-4 w-[70%] cursor-pointer
+                ${selectedContactOption == 'address' ? 'shadow-[0px_12px_64px_0px_rgba(28,25,25,0.12)]' : ''}`}
             >
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4 }}
-                >
-                    <p className='font-semibold text-[38px]'>Let's discuss your Project</p>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.1 }}
-                >
-                   <p className='text-[18px] text-grey-dark'>There are many variations of passages of Lorem Ipsu available. but the majority have suffered alte.</p>
-                </motion.div>
-                <motion.div 
-                whileHover={{ scale: 1.02, x: 5 }}
-                whileTap={{ scale: 0.98 }}
-                role='button' onClick={()=>setSelectedContactOption('address')}
-className={`flex items-center p-[12px] gap-2  rounded-[5px] mt-4 w-[70%] cursor-pointer
-                    ${selectedContactOption=='address' ? 'shadow-[0px_12px_64px_0px_rgba(28,25,25,0.12)]' : ''}`}   
-                                 >
-                    <div className='flex justify-center items-center p-[12px] bg-primary-light rounded-[5px] '><CiLocationOn style={{fontSize:'30px'}}/></div>
-                    <div>
-                        <p className='text-[14px]'>Address</p>
-                        <p className='font-medium text-[16px]'>Dahrm Pura Lahore</p>
+              <div className='flex justify-center items-center p-[12px] bg-primary-light rounded-[5px] '>
+                <CiLocationOn style={{ fontSize: '30px' }} />
+              </div>
+              <div>
+                <p className='text-[14px]'>Address</p>
+                <p className='font-medium text-[16px]'>Dahrm Pura Lahore</p>
+              </div>
+            </motion.div>
 
-                    </div>
+            {/* EMAIL */}
+            <motion.div
+              whileHover={{ scale: 1.02, x: 5 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => setSelectedContactOption('email')}
+              className={`flex items-center p-[12px] gap-2 rounded-[5px] mt-4 w-[70%] cursor-pointer
+                ${selectedContactOption == 'email' ? 'shadow-[0px_12px_64px_0px_rgba(28,25,25,0.12)]' : ''}`}
+            >
+              <div className='flex justify-center items-center p-[12px] bg-primary-light rounded-[5px] '>
+                <CiLocationOn style={{ fontSize: '30px' }} />
+              </div>
+              <div>
+                <p className='text-[14px]'>Email</p>
+                <p className='font-medium text-[16px]'>nasarmasood111@gmail.com</p>
+              </div>
+            </motion.div>
 
+            {/* PHONE */}
+            <motion.div
+              whileHover={{ scale: 1.02, x: 5 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => setSelectedContactOption('phone')}
+              className={`flex items-center p-[12px] gap-2 rounded-[5px] mt-4 w-[70%] cursor-pointer
+                ${selectedContactOption == 'phone' ? 'shadow-[0px_12px_64px_0px_rgba(28,25,25,0.12)]' : ''}`}
+            >
+              <div className='flex justify-center items-center p-[12px] bg-primary-light rounded-[5px] '>
+                <CiLocationOn style={{ fontSize: '30px' }} />
+              </div>
+              <div>
+                <p className='text-[14px]'>Phone</p>
+                <p className='font-medium text-[16px]'>+92307-5325854</p>
+              </div>
+            </motion.div>
+          </motion.div>
 
-                </motion.div>
-                <motion.div 
-                whileHover={{ scale: 1.02, x: 5 }}
-                whileTap={{ scale: 0.98 }}
-                role='button' onClick={()=>setSelectedContactOption('email')} className={`flex items-center p-[12px] gap-2  rounded-[5px] mt-4 w-[70%] cursor-pointer
-                    ${selectedContactOption=='email' ? 'shadow-[0px_12px_64px_0px_rgba(28,25,25,0.12)]' : ''}`}>
-                    <div className='flex justify-center items-center p-[12px] bg-primary-light rounded-[5px] '><CiLocationOn style={{fontSize:'30px'}}/></div>
-                    <div>
-                        <p className='text-[14px]'>email</p>
-                        <p className='font-medium text-[16px]'>Dahrm Pura Lahore</p>
+          {/* RIGHT SIDE • CONTACT FORM */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="w-[60%]"
+          >
+            <p className='text-grey-dark text-[18px] mt-7'>
+              Send me a message using the form—I’ll get back to you soon.
+            </p>
 
-                    </div>
+            <Formik
+              initialValues={initialValues}
+              validationSchema={validationSchema}
+              onSubmit={sendEmail}
+            >
+              {({ isSubmitting }) => (
+                <Form className='mt-7'>
 
+                  {/* NAME */}
+                  <Field
+                    name="name"
+                    type="text"
+                    placeholder="Name*"
+                    className="w-full border-0 border-b-[1px] [border-bottom-color:#E6E8EB]
+                      focus:[border-bottom-color:#A53DFF] focus:outline-none
+                      placeholder:text-[#697484] placeholder:text-sm py-2"
+                  />
+                  <ErrorMessage name="name" component="p" className="text-red-500 text-sm" />
 
-                </motion.div>
-                <motion.div 
-                whileHover={{ scale: 1.02, x: 5 }}
-                whileTap={{ scale: 0.98 }}
-                role='button' onClick={()=>setSelectedContactOption('phone')} className={`flex items-center p-[12px] gap-2  rounded-[5px] mt-4 w-[70%] cursor-pointer
-                    ${selectedContactOption=='phone' ? 'shadow-[0px_12px_64px_0px_rgba(28,25,25,0.12)]' : ''}`}>
-                    <div className='flex justify-center items-center p-[12px] bg-primary-light rounded-[5px] '><CiLocationOn style={{fontSize:'30px'}}/></div>
-                    <div>
-                        <p className='text-[14px]'>Address</p>
-                        <p className='font-medium text-[16px]'>Dahrm Pura Lahore</p>
+                  {/* EMAIL */}
+                  <Field
+                    name="email"
+                    type="email"
+                    placeholder="Email*"
+                    className="w-full border-0 border-b-[1px] [border-bottom-color:#E6E8EB]
+                      focus:[border-bottom-color:#A53DFF] focus:outline-none
+                      placeholder:text-[#697484] placeholder:text-sm py-2"
+                  />
+                  <ErrorMessage name="email" component="p" className="text-red-500 text-sm" />
 
-                    </div>
+                  {/* LOCATION (optional field) */}
+                  <input
+                    type="text"
+                    placeholder="Location"
+                    className="w-full border-0 border-b-[1px] [border-bottom-color:#E6E8EB]
+                      focus:[border-bottom-color:#A53DFF] focus:outline-none
+                      placeholder:text-[#697484] placeholder:text-sm py-2"
+                  />
 
+                  {/* SUBJECT */}
+                  <Field
+                    name="subject"
+                    type="text"
+                    placeholder="Subject*"
+                    className="w-full border-0 border-b-[1px] [border-bottom-color:#E6E8EB]
+                      focus:[border-bottom-color:#A53DFF] focus:outline-none
+                      placeholder:text-[#697484] placeholder:text-sm py-2 mt-2"
+                  />
+                  <ErrorMessage name="subject" component="p" className="text-red-500 text-sm" />
 
-                </motion.div>
-                  <motion.div 
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                    className="flex gap-5 py-2 rounded-lg mt-4"
+                  {/* MESSAGE */}
+                  <Field
+                    name="message"
+                    type="text"
+                    placeholder="Message*"
+                    className="w-full border-0 border-b-[1px] [border-bottom-color:#E6E8EB]
+                      focus:[border-bottom-color:#A53DFF] focus:outline-none
+                      placeholder:text-[#697484] placeholder:text-sm py-2 mt-2"
+                  />
+                  <ErrorMessage name="message" component="p" className="text-red-500 text-sm" />
+
+                  {/* SUBMIT BUTTON */}
+                  <motion.button
+                    type="submit"
+                    disabled={isSubmitting}
+                    whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(165, 61, 255, 0.3)" }}
+                    whileTap={{ scale: 0.95 }}
+                    className="cursor-pointer px-[24px] py-[12px] mt-8
+                      bg-primary text-white rounded-lg w-[130px] text-center"
                   >
-                <motion.div 
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                whileTap={{ scale: 0.9 }}
-                role="button"
-                onClick={()=>setSelectedIcon("facebook")}
-                style={{backgroundColor:selectedIcon=='facebook'?'#A53DFF':'',cursor:'pointer',padding:'10px',borderRadius:'5px'}}> 
-                    {selectedIcon=='facebook'?
-                    <img
-              src="/images/facebookwhite.svg"
-              alt="My Picture"
-              className="w-full h-full object-cover"
-            />: <img
-              src="/images/facebookprimary.svg"
-              alt="My Picture"
-              className="w-full h-full object-cover"
-            />}</motion.div>
-             <motion.div 
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                whileTap={{ scale: 0.9 }}
-                role="button"
-                onClick={()=>setSelectedIcon("linkedin")}
-                style={{backgroundColor:selectedIcon=='linkedin'?'#A53DFF':'',cursor:'pointer',padding:'5px',borderRadius:'5px'}}> 
-                    {selectedIcon=='linkedin'?
-                    <span className="font-bold  text-white text-[30px] leading-none  px-2 py-1 rounded-sm">
-  in
-</span>:             <span className="font-bold text-[30px] text-primary leading-none  px-2 py-1 rounded-sm">
-  in
-</span>}</motion.div>
-               <motion.div 
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                whileTap={{ scale: 0.9 }}
-                role="button"
-                onClick={()=>setSelectedIcon("github")}
-                style={{backgroundColor:selectedIcon=='github'?'#A53DFF':'',cursor:'pointer',padding:'8px',borderRadius:'5px'}}> 
-                    {selectedIcon=='github'?
-                    <img
-              src="/images/githubwhite.png"
-              alt="My Picture"
-              className="w-6 h-6 object-cover"
-            />: <img
-              src="/images/githubprimary.svg"
-              alt="My Picture"
-              className="w-6 h-6 object-cover"
-            />}</motion.div>
-            </motion.div>
-             
-                
+                    {isSubmitting ? "Sending..." : "Submit"}
+                  </motion.button>
 
+                </Form>
+              )}
+            </Formik>
+          </motion.div>
 
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4 }}
-                 >
-                    <p className='text-grey-dark text-[18px]'>There are many variations of passages of Lorem Ipsu available,
-but the majority have suffered alte.</p>
-                 </motion.div>
-                <div className='mt-7'>
-                    <input
-  type="text"
-  placeholder="Name*"
-  className="w-full border-0 border-b-[1px] 
-         [border-bottom-color:#E6E8EB] 
-         focus:[border-bottom-color:#A53DFF]
-         focus:outline-none focus:ring-0 
-         placeholder:text-[#697484]
-         focus:placeholder:text-[#A53DFF]
-         placeholder:text-sm py-2"
-/>
-
-
-<input
-  type="email"
-  placeholder="Email*"
-  className="w-full border-0 border-b-[1px] 
-         [border-bottom-color:#E6E8EB] 
-         focus:[border-bottom-color:#A53DFF]
-         focus:outline-none focus:ring-0 
-         placeholder:text-[#697484]
-         focus:placeholder:text-[#A53DFF]
-         placeholder:text-sm py-2"
-/>
-
-<input
-  type="text"
-  placeholder="Location"
-  className="w-full border-0 border-b-[1px] 
-         [border-bottom-color:#E6E8EB] 
-         focus:[border-bottom-color:#A53DFF]
-         focus:outline-none focus:ring-0 
-         placeholder:text-[#697484]
-         focus:placeholder:text-[#A53DFF]
-         placeholder:text-sm py-2"
-/>
-<div className='flex gap-2'>
-    
-<input
-  type="text"
-  placeholder="Budget*"
-  className="w-full border-0 border-b-[1px] 
-         [border-bottom-color:#E6E8EB] 
-         focus:[border-bottom-color:#A53DFF]
-         focus:outline-none focus:ring-0 
-         placeholder:text-[#697484]
-         focus:placeholder:text-[#A53DFF]
-         placeholder:text-sm py-2"
-/>
-
-<input
-  type="text"
-  placeholder="Subject"
-  className="w-full border-0 border-b-[1px] 
-         [border-bottom-color:#E6E8EB] 
-         focus:[border-bottom-color:#A53DFF]
-         focus:outline-none focus:ring-0 
-         placeholder:text-[#697484]
-         focus:placeholder:text-[#A53DFF]
-         placeholder:text-sm py-2"
-/>
-
-
-
-</div>
-<input
-  type="text"
-  placeholder="Message"
-  className="w-full border-0 border-b-[1px] 
-         [border-bottom-color:#E6E8EB] 
-         focus:[border-bottom-color:#A53DFF]
-         focus:outline-none focus:ring-0 
-         placeholder:text-[#697484]
-         focus:placeholder:text-[#A53DFF]
-         placeholder:text-sm py-2"
-/>
-
-                </div>
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.3 }}
-                  className='mt-8'
-                >
-                    <motion.div
-                whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(165, 61, 255, 0.3)" }}
-                whileTap={{ scale: 0.95 }}
-                role="button"
-                style={{
-                    display:'flex',
-                    justifyContent:'space-between',
-                  backgroundColor: "#A53DFF",
-                  alignItems:'center',
-                  borderRadius: "8px",
-                  color: "#FFFFFF",
-                  width:'130px'
-                }}
-                className="cursor-pointer px-[24px] py-[12px] rounded-3 i mt-[20px]"
-              >
-                <p className="font-medium text-[16px]">Submit</p> <div> <img
-              src="/images/dIcon.svg"
-              alt="download icon"
-            /></div>
-              </motion.div>
-                </motion.div>
-            </motion.div>
-            </div>
-
-        </motion.div>
+        </div>
+      </motion.div>
     </div>
-  )
+  );
 }
 
-export default ContactSection
+export default ContactSection;

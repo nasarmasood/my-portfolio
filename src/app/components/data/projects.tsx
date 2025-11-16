@@ -55,14 +55,14 @@ export const projectsData: ProjectDataType[] = [
     name: 'Clove Dental',
     type: 'Medical/Hospital Management System',
     description: 'Comprehensive management for dental clinics.',
-    src: '/images/projectpic.svg',
+    src: '/images/project_pics/clovedental/logo.svg',
   },
   {
     id: 7,
     name: 'Clove Web',
-    type: 'Medical/Hospital Management System',
-    description: 'Full hospital management web application.',
-    src: '/images/projectpic.svg',
+    type: 'Website',
+    description: 'Website for Hosiptal or Medical Company.',
+    src: '/images/project_pics/cloveweb/logo.svg',
   },
   {
     id: 8,
@@ -76,7 +76,7 @@ export const projectsData: ProjectDataType[] = [
     name: 'Open AI Widget',
     type: 'AI Chatbot',
     description: 'AI-based chatbot integration for websites.',
-    src: '/images/projectpic.svg',
+    src: '/images/project_pics/chatboat/logo.jpg',
     highlight: true,
   },
   {
