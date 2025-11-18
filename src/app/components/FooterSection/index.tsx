@@ -151,7 +151,8 @@ function FooterSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-                          <p className="font-regular text-[16px] text-primary-white ">Copyright © 2022 Picto.</p>
+                          <p className="font-regular text-[16px] text-primary-white ">© {(new Date().getFullYear())} Nasar Masood. All rights reserved.</p>
+                          
 
           </motion.div>
             </motion.div>

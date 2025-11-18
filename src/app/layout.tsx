@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Work_Sans, Poppins } from 'next/font/google'; // 1. Import Poppins
 import "./globals.css";
-import HeaderDesktop from "./components/responsiveHeader";
+import { Toaster } from "react-hot-toast";
 
 // ----------------------------------------------------
 // Work Sans Configuration (Your primary font, variable-font)
@@ -37,6 +37,7 @@ export default function RootLayout({
       <body
         className={`${workSans.variable} ${poppins.variable} font-work antialiased m-0 p-0`}
       >
+        <Toaster position="top-right" />
         <div>{children}</div>
       </body>
     </html>
