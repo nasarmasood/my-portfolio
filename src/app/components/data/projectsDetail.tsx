@@ -18,12 +18,12 @@ import { IoMdSync } from "react-icons/io";
 
 export interface FeatureType {
   name: string;
-  logo: JSX.Element;
+  logo: React.ReactElement;
 }
 
 export interface TechType {
   name: string;
-logo: JSX.Element
+logo: React.ReactElement
 }
 
 export interface TechStackType {

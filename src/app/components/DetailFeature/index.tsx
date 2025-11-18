@@ -50,7 +50,7 @@ function DetailFeature({project}:{project?:ProjectDetailType}) {
                 className="item bg-grey px-5 shadow-md rounded-lg shadow-md cursor-pointer"
               >
                 <div className="flex items-center gap-2 py-3">
-                  {React.cloneElement(feature.logo, { style: iconStyle })}                  
+                  {React.cloneElement(feature.logo, { style: iconStyle } as React.HTMLAttributes<HTMLElement>)}                  
                   
                   <p className="font-medium text-[16px]">{feature.name}</p>
                 </div>

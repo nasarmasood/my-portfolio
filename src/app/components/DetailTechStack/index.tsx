@@ -52,7 +52,7 @@ function DetailTechStack({project}:{project?:ProjectDetailType}) {
                 className="item bg-grey px-5 shadow-md rounded-lg shadow-md cursor-pointer"
               >
                 <div className="flex items-center gap-2 py-3">
-{React.cloneElement(tech.logo, { style: iconStyle })}                  
+{React.cloneElement(tech.logo, { style: iconStyle } as React.HTMLAttributes<HTMLElement>)}                  
 <p className="font-medium text-[16px]">{tech.name}</p>
                 </div>
               </motion.div>
@@ -80,7 +80,7 @@ function DetailTechStack({project}:{project?:ProjectDetailType}) {
                   className="item bg-grey px-5 shadow-md rounded-lg shadow-md cursor-pointer"
                 >
                   <div className="flex items-center gap-2 py-3">
-{React.cloneElement(tech.logo, { style: iconStyle })}                  
+{React.cloneElement(tech.logo, { style: iconStyle } as React.HTMLAttributes<HTMLElement>)}                  
 <p className="font-medium text-[16px]">{tech.name}</p>
                   </div>
                 </motion.div>
