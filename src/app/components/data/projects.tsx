@@ -23,7 +23,7 @@ export const projectsData: ProjectDataType[] = [
     id: 2,
     name: 'Workscape',
     type: 'Web App & Website',
-    description: 'Helps lawyers prepare strong cases for disabled clients.',
+    description: 'Labor Market Intelligence Platform • SaaS',
     src: '/images/project_pics/workscape/logo.svg',
     highlight: true,
   },

@@ -15,7 +15,20 @@ import { GiHelmet } from "react-icons/gi";
 import { BsCalendarCheck, BsChatDots, BsClockHistory } from "react-icons/bs";
 import { IoMdSync } from "react-icons/io";
 
+// Only new ones for the non-AWS features (your existing imports already cover FaReact, etc.)
 
+
+import { FaBookOpen, FaTasks, FaMobileAlt, FaUsersCog } from "react-icons/fa";
+import { MdSchool, MdOutlineWork } from "react-icons/md";
+import { BsGlobe, BsBarChartLine } from "react-icons/bs";
+import {  FaCreditCard } from "react-icons/fa";
+
+import { SiTailwindcss } from "react-icons/si";
+import { FaFileCsv, FaUserShield, FaCrown, FaServer } from "react-icons/fa";
+
+import { SiTypescript, SiReactquery } from "react-icons/si";
+import { BsCalendar3 } from "react-icons/bs";
+import { FaPenFancy, FaGripLines } from "react-icons/fa";
 export interface FeatureType {
   name: string;
   logo: React.ReactElement;
@@ -164,6 +177,61 @@ additional: [
     },
     highlight: true,
   },
+{
+  id: 2,
+  name: 'Workscape Analytics',
+  type: 'Labor Market Intelligence Platform • SaaS',
+  description:
+    'Workscape Analytics is a full-stack SaaS platform built with the MERN + Next.js stack, delivering real-time access to the latest ORS (Occupational Requirements Survey) and OEWS (Occupational Employment and Wage Statistics) data from the U.S. Bureau of Labor Statistics. Designed for vocational experts and law firms, it provides instant national, state, and local job/wage numbers, DOT titles & codes, RFC checklists, interactive SOC comparison reports, and one-click professional reports in both PDF and CSV formats across 100 or all 455 SOC codes. Features include a multi-tier subscription model (Free Trial → Basic → Premium → Custom), Stripe payment integration, role-based access control (Admin & User roles), and a fast, SEO-friendly, responsive dashboard powered by Next.js.',
+  heroimagesrc: '/images/project_pics/workscape/hero_image.png',
+  liveurl: 'http://107.23.174.20:3002/',
+  githuburl: 'https://github.com/yourusername/workscape-analytics',
+  sliders: [
+    { image: { desktop: '/images/project_pics/workscape/jobs.png', mobile: '/images/project_pics/workscape/slider_1_mobile.png' }, 
+      text: { title: 'National & State Job Numbers', description: 'Instant OEWS employment and wage data at all geographic levels.' } },
+    { image: { desktop: '/images/project_pics/workscape/report.png', mobile: '/images/project_pics/workscape/slider_2_mobile.png' }, 
+      text: { title: 'ORS Data & SOC Comparison Reports', description: 'Detailed physical/cognitive requirements with interactive charts.' } },
+    { image: { desktop: '/images/project_pics/workscape/rfc.png', mobile: '/images/project_pics/workscape/slider_3_mobile.png' }, 
+      text: { title: 'RFC Checklist & Rapid Calculations', description: 'Fast residual functional capacity analysis and multi-profile hypotheticals.' } },
+    { image: { desktop: '/images/project_pics/workscape/export.png', mobile: '/images/project_pics/workscape/slider_4_mobile.png' }, 
+      text: { title: 'PDF + CSV Report Export', description: 'One-click professional reports and raw data export in both PDF and CSV formats.' } },
+  ],
+  features: [
+    { name: 'Latest ORS & OEWS Data Integration', logo: <SiMongodb /> },
+    { name: 'National, State & Local Job/Wage Data', logo: <BsGlobe /> },
+    { name: '100 + Full 455 SOC Coverage', logo: <MdOutlineWork /> },
+    { name: 'Representative DOT Titles & Codes', logo: <FaBookOpen /> },
+    { name: 'RFC Checklist & Rapid Calculations', logo: <FaTasks /> },
+    { name: 'SOC Comparison Reports', logo: <BsBarChartLine /> },
+    { name: 'PDF + CSV Report Export', logo: <FaFileCsv /> },
+    { name: 'Free Trial + Multi-Tier Plans', logo: <FaCrown /> },
+    { name: 'Stripe Payment Integration', logo: <FaStripe /> },
+    { name: 'Admin & User Role-Based Access', logo: <FaUserShield /> },
+  ],
+  techStack: {
+   core: [
+  { name: 'MongoDB', logo: <SiMongodb /> },
+  { name: 'Express.js', logo: <SiExpress /> },
+  { name: 'React.js', logo: <FaReact /> },
+  { name: 'Next.js', logo: <SiNextdotjs /> },
+  { name: 'Node.js', logo: <FaNodeJs /> },
+  { name: 'TypeScript', logo: <SiTypescript /> },
+  { name: 'Tailwind CSS 4', logo: <SiTailwindcss /> },
+],
+   additional: [
+      { name: 'TanStack Query', logo: <SiReactquery /> },
+      { name: 'Stripe Payments', logo: <FaStripe /> },
+      { name: 'ApexCharts + React-ApexCharts', logo: <SiChartdotjs /> },
+      { name: 'FullCalendar', logo: <BsCalendar3 /> },
+      { name: 'React-Quill Editor', logo: <FaPenFancy /> },
+      { name: 'React-DND (Drag & Drop)', logo: <FaGripLines /> },
+      { name: 'React-CSV + XLSX Export', logo: <FaFileCsv /> },
+      { name: 'Node-Cron Automation', logo: <BsGlobe /> },
+      { name: 'AWS EC2 Deployment', logo: <FaServer /> },
+    ],
+  },
+  highlight: true,
+},,
   // Remaining projects
   ...[
     'Workscape',
@@ -280,3 +348,6 @@ additional: [
     ),
   })),
 ];
+
+
+

@@ -61,15 +61,19 @@ export default function DetailSlider({project}:{project?:ProjectDetailType}) {
               
 
               {/* Bottom two images: 30% + 70% */}
-              <div className="flex gap-2 mt-2 px-2">
-                <div className="w-[30%] h-100 relative">
+              <div className="flex mt-2 px-2">
+                {/* <div className="w-[30%] h-100 relative">
                                <Image fill src={slide.image.mobile} alt='project pic'/>
                   
-                </div>
-                <div className="w-[70%] relative" >
-                <Image fill src={slide.image.desktop} alt='project pic'/>
-                 
-                </div>
+                </div> */}
+                <div className="relative w-full h-[40vh] overflow-hidden">
+  <Image
+    src={slide.image.desktop}
+    alt="project pic"
+   width={1024}
+height={100}  
+  />
+</div>
               </div>
 
               {/* Text below */}

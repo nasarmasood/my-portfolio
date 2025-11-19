@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { FaReact } from "react-icons/fa";
 import { ProjectDetailType } from "../data/projectsDetail";
 import { iconStyle } from "@/app/common";
+import { content } from '../data/conent';
+
 function DetailFeature({project}:{project?:ProjectDetailType}) {
  
   return (
@@ -30,8 +32,7 @@ function DetailFeature({project}:{project?:ProjectDetailType}) {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mt-3"
           >
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration.
+            {content.featuresSubHeading}
           </motion.p>
         </div>
       </motion.div>

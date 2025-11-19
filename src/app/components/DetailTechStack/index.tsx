@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ProjectDetailType } from "../data/projectsDetail";
 import { iconStyle } from "@/app/common";
+
+import { content } from '../data/conent';
 function DetailTechStack({project}:{project?:ProjectDetailType}) {
  const [viewAll,setViewAll]=useState(false)
 
@@ -31,8 +33,7 @@ function DetailTechStack({project}:{project?:ProjectDetailType}) {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mt-3"
           >
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration.
+            {content.techstackSubHeading}
           </motion.p>
         </div>
       </motion.div>
