@@ -18,17 +18,32 @@ import { IoMdSync } from "react-icons/io";
 // Only new ones for the non-AWS features (your existing imports already cover FaReact, etc.)
 
 
-import { FaBookOpen, FaTasks, FaMobileAlt, FaUsersCog } from "react-icons/fa";
+import { FaBookOpen, FaTasks } from "react-icons/fa";
 import { MdSchool, MdOutlineWork } from "react-icons/md";
-import { BsGlobe, BsBarChartLine } from "react-icons/bs";
 import {  FaCreditCard } from "react-icons/fa";
 
-import { SiTailwindcss } from "react-icons/si";
-import { FaFileCsv, FaUserShield, FaCrown, FaServer } from "react-icons/fa";
+import {  FaUserShield, FaCrown, FaServer } from "react-icons/fa";
 
-import { SiTypescript, SiReactquery } from "react-icons/si";
+import { SiReactquery } from "react-icons/si";
 import { BsCalendar3 } from "react-icons/bs";
 import { FaPenFancy, FaGripLines } from "react-icons/fa";
+
+// React & Node
+import { FaMobileAlt, FaUsersCog, FaFileCsv } from "react-icons/fa";
+
+// Deck.gl / Charts / Misc
+import { BsGlobe, BsBarChartLine } from "react-icons/bs";
+
+// Core Tech Logos
+import { SiTypescript, SiTailwindcss } from "react-icons/si";
+import { SiMapbox } from "react-icons/si"; // close alternative
+import { BsBoundingBoxCircles } from "react-icons/bs";
+
+
+
+
+// Optional placeholders for Deck.gl / MapLibre GL / Vite (if no official icons, you can create custom SVGs)
+
 export interface FeatureType {
   name: string;
   logo: React.ReactElement;
@@ -231,7 +246,75 @@ additional: [
     ],
   },
   highlight: true,
-},,
+},
+{
+  id: 3,
+  name: 'Hajj Bus Tracker',
+  type: 'Real-Time Bus Management & Tracking Platform',
+  description: 
+    'Hajj Bus Tracker is a real-time bus management system for Hajj operations in Saudi Arabia. It integrates GPS data from bus tracking devices to plot buses on interactive maps using Deck.gl and MapLibre GL. Users can monitor bus locations, driver and company information, routes, stops, and regional statistics. The platform supports reporting, charts, and printable route details, facilitating efficient transportation management during Hajj.',
+  heroimagesrc: '/images/project_pics/hajj-bus-tracker/hero_image.png',
+  liveurl: '', // Add live URL if available
+  githuburl: 'https://github.com/yourusername/hajj-bus-tracker',
+  sliders: [
+    {
+      image: { desktop: '/images/project_pics/hajj-bus-tracker/map_view.png', mobile: '/images/project_pics/hajj-bus-tracker/slider_1_mobile.png' },
+      text: { title: 'Interactive Map with Buses', description: 'Real-time bus locations plotted as clickable markers.' }
+    },
+    {
+      image: { desktop: '/images/project_pics/hajj-bus-tracker/region_stats.png', mobile: '/images/project_pics/hajj-bus-tracker/slider_2_mobile.png' },
+      text: { title: 'Region Tracking', description: 'View how many buses are in a specific region at any given time.' }
+    },
+    {
+      image: { desktop: '/images/project_pics/hajj-bus-tracker/route_print.png', mobile: '/images/project_pics/hajj-bus-tracker/slider_3_mobile.png' },
+      text: { title: 'Routes & Stops', description: 'Detailed route information including stops, duration, and printable maps.' }
+    },
+    {
+      image: { desktop: '/images/project_pics/hajj-bus-tracker/reports.png', mobile: '/images/project_pics/hajj-bus-tracker/slider_4_mobile.png' },
+      text: { title: 'Reporting & Analytics', description: 'Generate reports and charts for bus movements, standing times, and operational statistics.' }
+    }
+  ],
+  features: [
+    { name: 'Real-Time Bus Tracking', logo: <IoMdSync /> },
+    { name: 'Clickable Bus Markers with Driver & Company Info', logo: <FaUsersCog /> },
+    { 
+      name: 'Custom Region Drawing (Polygon Tool)', 
+      logo: <BsBoundingBoxCircles /> // I can recommend one
+    },
+    { name: 'Interactive Deck.gl & MapLibre Maps & Google Maps', logo: <SiMongodb /> },
+    { name: 'Region Monitoring & Statistics', logo: <BsGlobe /> },
+    { name: 'Route Visualization & Printable Maps', logo: <MdOutlineWork /> },
+    { name: 'Stop & Route Duration Tracking', logo: <TbGauge /> },
+    { name: 'Real-Time Updates with SignalR Sockets', logo: <SiSocketdotio /> },
+    { name: 'Data Export & Reporting', logo: <AiOutlineFileExcel /> },
+    { name: 'Charts & Analytics Dashboard', logo: <BsBarChartLine /> },
+    { name: 'Scalable Multi-Bus Visualization', logo: <FaMobileAlt /> },
+   
+  ],
+  techStack: {
+    core: [
+      
+        { name: 'MongoDB', logo: <SiMongodb /> },
+        { name: 'Express.js', logo: <SiExpress /> },
+        { name: 'React.js', logo: <FaReact /> },
+        { name: 'Node.js', logo: <FaNodeJs /> },
+      { name: 'TypeScript', logo: <SiTypescript /> },
+      { name: 'Deck.gl', logo: <SiChartdotjs /> },
+      { name: 'MapLibre GL', logo: <SiMapbox /> }, // You may need to import a placeholder icon or custom logo
+      { name: 'SignalR', logo: <SiSocketdotio /> },
+      
+    ],
+    additional: [
+      { name: 'React-CSV Export', logo: <FaFileCsv /> },
+      { name: 'MUI Components', logo: <SiMui /> },
+      { name: 'Charts & Analytics', logo: <BsBarChartLine /> },
+      { name: 'Real-Time WebSockets', logo: <IoMdSync /> },
+      { name: 'Responsive Design', logo: <SiTailwindcss /> }
+    ]
+  },
+  highlight: true
+}
+,
   // Remaining projects
   ...[
     'Workscape',
