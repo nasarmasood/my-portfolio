@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { content, Content } from "@/app/components/data/conent";
+import { content } from "@/data/conent";
 
 function HeroSection() {
     const [selectedIcon,setSelectedIcon]=useState<string>()

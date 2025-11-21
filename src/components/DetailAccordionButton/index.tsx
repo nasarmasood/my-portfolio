@@ -1,10 +1,15 @@
 'use client'
 import React, { useState } from 'react';
-
+import {scrollToSection} from "@/utils"
 function DetailAccordionButton() {
   const tabs = ['About', 'Feature', 'Stack'];
   const [activeTab, setActiveTab] = useState('About');
 
+  const handleTabClick=(tab:string)=>
+  {
+    setActiveTab(tab)
+    scrollToSection(tab)
+  }
   return (
     <div className='container-wrapper bg-white'>
                 <div  className='container '>
@@ -14,7 +19,7 @@ function DetailAccordionButton() {
         {tabs.map((tab) => (
           <button
             key={tab}
-            onClick={() => setActiveTab(tab)}
+            onClick={() => handleTabClick(tab)}
             className={`pb-2 border-b-2 px-4 transition-colors duration-200 cursor-pointer ${
               activeTab === tab
                 ? 'border-primary text-black font-medium'

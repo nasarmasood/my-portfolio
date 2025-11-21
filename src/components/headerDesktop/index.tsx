@@ -1,17 +1,11 @@
 "use client";
 import React from "react";
 import { useState } from "react";
+import { scrollToSection } from "@/utils";
 function HeaderDesktop() {
   const [selectedSection, setSelectedSection] = useState<string>("Home");
 
-  function scrollToSection(id:string) {
-  const element = document.getElementById(id);
-  if (element) {
-    element.scrollIntoView({ behavior: "smooth" });
-  } else {
-    console.warn(`Element with id "${id}" not found.`);
-  }
-}
+  
 
   return (
     <div className="container-wrapper">

@@ -2,7 +2,8 @@
 import React from 'react'
 import { motion } from 'framer-motion';
 import Image from 'next/image'
-import { ProjectDetailType } from '../data/projectsDetail'
+import { ProjectDetailType } from '@/data/projectsDetail'
+
 function DetailHeroSection({project}:{project?:ProjectDetailType}) {
        
   const handleRouting=()=>

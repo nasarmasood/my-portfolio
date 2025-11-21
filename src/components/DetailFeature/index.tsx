@@ -2,14 +2,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaReact } from "react-icons/fa";
-import { ProjectDetailType } from "../data/projectsDetail";
-import { iconStyle } from "@/app/common";
-import { content } from '../data/conent';
-
+import { ProjectDetailType } from "@/data/projectsDetail";
+import { content } from "@/data/conent";
+import {iconStyle} from "@/app/common"
 function DetailFeature({project}:{project?:ProjectDetailType}) {
  
   return (
-    <div className="container-wrapper py-5">
+    <div id="Feature" className="container-wrapper py-5">
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

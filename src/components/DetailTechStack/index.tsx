@@ -1,15 +1,15 @@
 'use client'
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ProjectDetailType } from "../data/projectsDetail";
 import { iconStyle } from "@/app/common";
+import { ProjectDetailType } from "@/data/projectsDetail";
 
-import { content } from '../data/conent';
+import { content } from '@/data/conent';
 function DetailTechStack({project}:{project?:ProjectDetailType}) {
  const [viewAll,setViewAll]=useState(false)
 
   return (
-    <div className="container-wrapper bg-grey">
+    <div id='Stack' className="container-wrapper bg-grey">
         <div className="py-5">
       <motion.div 
         initial={{ opacity: 0, y: 30 }}

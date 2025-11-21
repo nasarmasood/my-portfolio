@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { userAgent } from 'next/server';
-import { projectsData } from '../data/projects';
+import { projectsData } from '@/data/projects';
 function ProjectSection() {
 
     const [visibleCount, setVisibleCount] = useState(6);

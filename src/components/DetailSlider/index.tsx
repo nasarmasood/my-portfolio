@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
-import { ProjectDetailType } from "../data/projectsDetail";
+import { ProjectDetailType } from "../../data/projectsDetail";
 
 const slides = [
   {

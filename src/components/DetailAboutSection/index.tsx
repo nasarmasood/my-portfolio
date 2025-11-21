@@ -1,5 +1,5 @@
 import React from 'react'
-import { ProjectDetailType } from '../data/projectsDetail'
+import { ProjectDetailType } from '@/data/projectsDetail'
 function DetailAboutSection({project}:{project?:ProjectDetailType}) {
 
   const handleRouting=()=>
@@ -8,7 +8,7 @@ function DetailAboutSection({project}:{project?:ProjectDetailType}) {
 
   }
   return (
-<div className='container-wrapper bg-white'>
+<div id='About' className='container-wrapper bg-white'>
                 <div  className='container '>        
                     <p>{project?.description}</p>
         {/* <div className='flex gap-2 mt-3 '><p className='font-medium'>App Development periode : </p>   <p> July 2020 (a month)</p></div> */}

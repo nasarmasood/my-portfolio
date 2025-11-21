@@ -2,7 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaReact } from "react-icons/fa";
-import { SkillsData } from "../data/skills";
+import { SkillsData } from "@/data/skills";
+
 import { iconStyle } from "@/app/common";
 function SkillsSection() {
  
