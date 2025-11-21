@@ -37,8 +37,10 @@ import { BsGlobe, BsBarChartLine } from "react-icons/bs";
 // Core Tech Logos
 import { SiTypescript, SiTailwindcss } from "react-icons/si";
 import { SiMapbox } from "react-icons/si"; // close alternative
-import { BsBoundingBoxCircles } from "react-icons/bs";
 
+import { FaBus, FaInfoCircle, FaRoute, FaPrint, FaTabletAlt } from "react-icons/fa";
+
+import { BsGeoAltFill, BsBarChartFill } from "react-icons/bs";
 
 
 
@@ -275,40 +277,34 @@ additional: [
     }
   ],
   features: [
-    { name: 'Real-Time Bus Tracking', logo: <IoMdSync /> },
-    { name: 'Clickable Bus Markers with Driver & Company Info', logo: <FaUsersCog /> },
-    { 
-      name: 'Custom Region Drawing (Polygon Tool)', 
-      logo: <BsBoundingBoxCircles /> // I can recommend one
-    },
-    { name: 'Interactive Deck.gl & MapLibre Maps & Google Maps', logo: <SiMongodb /> },
-    { name: 'Region Monitoring & Statistics', logo: <BsGlobe /> },
-    { name: 'Route Visualization & Printable Maps', logo: <MdOutlineWork /> },
-    { name: 'Stop & Route Duration Tracking', logo: <TbGauge /> },
-    { name: 'Real-Time Updates with SignalR Sockets', logo: <SiSocketdotio /> },
-    { name: 'Data Export & Reporting', logo: <AiOutlineFileExcel /> },
-    { name: 'Charts & Analytics Dashboard', logo: <BsBarChartLine /> },
-    { name: 'Scalable Multi-Bus Visualization', logo: <FaMobileAlt /> },
-   
+    { name: 'Real-time tracking of 5,000+ buses', logo: <FaBus className="text-2xl text-blue-600" /> },
+    { name: 'Sub-second SignalR WebSocket updates', logo: <IoMdSync className="text-2xl text-green-500" /> },
+    { name: '60fps high-density rendering with Deck.gl', logo: <SiMapbox className="text-2xl text-green-700" /> },
+    { name: 'Clickable markers (plate, driver, company, speed)', logo: <FaInfoCircle className="text-2xl" /> },
+    { name: 'Geofenced zones (Mina, Arafat, Muzdalifah)', logo: <BsGeoAltFill className="text-2xl text-orange-600" /> },
+    { name: 'Live entry/exit counters & occupancy analytics', logo: <BsBarChartFill className="text-2xl text-purple-600" /> },
+    { name: 'Historical route playback with timeline', logo: <FaRoute className="text-2xl text-cyan-600" /> },
+    { name: 'Printable trip reports (distance, stops, duration)', logo: <FaPrint className="text-2xl" /> },
+    { name: 'Idle-time heatmaps & CSV/PDF export', logo: <FaFileCsv className="text-2xl text-green-600" /> },
+    { name: 'Responsive control-room dashboard', logo: <FaTabletAlt className="text-2xl" /> },
   ],
   techStack: {
     core: [
       
-        { name: 'MongoDB', logo: <SiMongodb /> },
-        { name: 'Express.js', logo: <SiExpress /> },
-        { name: 'React.js', logo: <FaReact /> },
-        { name: 'Node.js', logo: <FaNodeJs /> },
+      { name: 'React.js', logo: <FaReact /> },
+      { name: 'Node.js', logo: <FaNodeJs /> },
       { name: 'TypeScript', logo: <SiTypescript /> },
       { name: 'Deck.gl', logo: <SiChartdotjs /> },
       { name: 'MapLibre GL', logo: <SiMapbox /> }, // You may need to import a placeholder icon or custom logo
       { name: 'SignalR', logo: <SiSocketdotio /> },
+      { name: 'Real-Time WebSockets', logo: <IoMdSync /> },
+
       
     ],
     additional: [
       { name: 'React-CSV Export', logo: <FaFileCsv /> },
       { name: 'MUI Components', logo: <SiMui /> },
       { name: 'Charts & Analytics', logo: <BsBarChartLine /> },
-      { name: 'Real-Time WebSockets', logo: <IoMdSync /> },
       { name: 'Responsive Design', logo: <SiTailwindcss /> }
     ]
   },
