@@ -43,7 +43,13 @@ import { FaBus, FaInfoCircle, FaRoute, FaPrint, FaTabletAlt } from "react-icons/
 import { BsGeoAltFill, BsBarChartFill } from "react-icons/bs";
 
 
+import { FaVideo } from "react-icons/fa";
+import { FaWpforms } from "react-icons/fa";
+import { GrUserSettings } from "react-icons/gr";
+import { MdSupportAgent } from "react-icons/md";
 
+import { RiDeviceLine } from "react-icons/ri";  // This one exists
+import { TbBarcode } from "react-icons/tb"; // replacement for TbBrandZebra
 // Optional placeholders for Deck.gl / MapLibre GL / Vite (if no official icons, you can create custom SVGs)
 
 export interface FeatureType {
@@ -107,23 +113,33 @@ export const projectDetailData: ProjectDetailType[] = [
     text: { title:'Practice Portal', description:'Hospitals can efficiently manage appointments, patients, and workflows.' } 
   },
   { 
-    image: { desktop:'/images/project_pics/zebra_doctor/slider_2.jpeg', mobile:'/images/project_pics/zebra_doctor/slider_2.jpeg' }, 
+    image: { desktop:'/images/project_pics/zebra_doctor/slider_2.png', mobile:'/images/project_pics/zebra_doctor/slider_2.png' }, 
     text: { title:'Patient Portal', description:'Patients can book appointments, view reports, and access medical history easily.' } 
   },
   { 
-    image: { desktop:'/images/project_pics/zebra_doctor/slider_3.jpeg', mobile:'/images/project_pics/zebra_doctor/slider_3.jpeg' }, 
+    image: { desktop:'/images/project_pics/zebra_doctor/slider_3.png', mobile:'/images/project_pics/zebra_doctor/slider_3.png' }, 
     text: { title:'Doctor Portal', description:'Doctors can manage schedules, patient consultations, and provide instructions seamlessly.' } 
   },
   { 
-    image: { desktop:'/images/project_pics/zebra_doctor/slider_4.jpeg', mobile:'/images/project_pics/zebra_doctor/slider_4.jpeg' }, 
+    image: { desktop:'/images/project_pics/zebra_doctor/slider_4.png', mobile:'/images/project_pics/zebra_doctor/slider_4.png' }, 
     text: { title:'Admin Portal', description:'Admins can oversee hospitals, doctors, patients, and system-wide operations efficiently.' } 
   },
+  { 
+    image: { desktop:'/images/project_pics/zebra_doctor/slider_5.png', mobile:'/images/project_pics/zebra_doctor/slider_5.png' }, 
+    text: { title:'Appointment Form', description:'Patient Appointment Booking Form.' } 
+  },
+  { 
+    image: { desktop:'/images/project_pics/zebra_doctor/slider_6.png', mobile:'/images/project_pics/zebra_doctor/slider_6.png' }, 
+    text: { title:'Customiseable Appointment FOrm', description:'Hospitals can customise their appointment form as per their need.' } 
+  },
+  { 
+    image: { desktop:'/images/project_pics/zebra_doctor/slider_7.png', mobile:'/images/project_pics/zebra_doctor/slider_7.png' }, 
+    text: { title:'Secure Chat', description:'Patient can create a ticket to open up discussion with the hosptal staff.' } 
+  },
 ],
-
-  features: [
+features : [
   { name: 'Admin, Doctor, Patient & Hospital Portals', logo: <MdOutlineGroups /> },
   { name: 'Online & Physical Appointment Booking', logo: <BsCalendarCheck /> },
-  { name: 'Customizable Appointment & Patient Forms', logo: <FaRegFileAlt /> },
   { name: 'Report Sharing & Doctor Instructions', logo: <AiOutlineShareAlt /> },
   { name: 'Real-time Chat & Notifications', logo: <BsChatDots /> },
   { name: 'Doctor & Patient History Tracking', logo: <BsClockHistory /> },
@@ -131,7 +147,13 @@ export const projectDetailData: ProjectDetailType[] = [
   { name: 'Hospital Packages with Access Levels', logo: <MdOutlineLocalHospital /> },
   { name: 'Athena & ACW Integrations', logo: <IoMdSync /> },
   { name: 'Scalable & Secure Architecture', logo: <FaShieldAlt /> },
-],
+  { name: 'PWA (Progressive Web App) Support', logo: <RiDeviceLine /> },
+  { name: 'Highly Customizable Appointment Forms', logo: <FaWpforms /> },
+  { name: 'Customizable Patient Data Collection & Survey Forms', logo: <GrUserSettings /> },
+  { name: 'Built-in Video Call Appointments', logo: <FaVideo /> },
+  { name: 'Patient Ticketing System (Queries, Staff Replies, Secure Chat)', logo: <MdSupportAgent /> },
+]
+,
     techStack: {
  core: [
   { name: 'MongoDB', logo: <SiMongodb /> },
