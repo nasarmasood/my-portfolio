@@ -19,8 +19,7 @@ import { IoMdSync } from "react-icons/io";
 
 
 import { FaBookOpen, FaTasks } from "react-icons/fa";
-import { MdSchool, MdOutlineWork } from "react-icons/md";
-import {  FaCreditCard } from "react-icons/fa";
+import { MdOutlineWork } from "react-icons/md";
 
 import {  FaUserShield, FaCrown, FaServer } from "react-icons/fa";
 
@@ -29,7 +28,7 @@ import { BsCalendar3 } from "react-icons/bs";
 import { FaPenFancy, FaGripLines } from "react-icons/fa";
 
 // React & Node
-import { FaMobileAlt, FaUsersCog, FaFileCsv } from "react-icons/fa";
+import { FaFileCsv } from "react-icons/fa";
 
 // Deck.gl / Charts / Misc
 import { BsGlobe, BsBarChartLine } from "react-icons/bs";
@@ -49,8 +48,10 @@ import { GrUserSettings } from "react-icons/gr";
 import { MdSupportAgent } from "react-icons/md";
 
 import { RiDeviceLine } from "react-icons/ri";  // This one exists
-import { TbBarcode } from "react-icons/tb"; // replacement for TbBrandZebra
-// Optional placeholders for Deck.gl / MapLibre GL / Vite (if no official icons, you can create custom SVGs)
+import { FiGlobe } from "react-icons/fi";
+import { BsGraphUpArrow } from "react-icons/bs";
+import { FaFire, FaMapMarkedAlt, FaMicrochip, FaFilePdf, FaTools } from "react-icons/fa";
+import { IoAlertCircle } from "react-icons/io5";
 
 export interface FeatureType {
   name: string;
@@ -373,10 +374,13 @@ additional: [
     { name: 'Responsive control-room dashboard', logo: <FaTabletAlt className="text-2xl" /> },
   ],
   techStack: {
+    
     core: [
-      
-      { name: 'React.js', logo: <FaReact /> },
-      { name: 'Node.js', logo: <FaNodeJs /> },
+      { name: 'MongoDB', logo: <SiMongodb /> },
+  { name: 'Express.js', logo: <SiExpress /> },
+  { name: 'React.js', logo: <FaReact /> },
+  { name: 'Next.js', logo: <SiNextdotjs /> },
+  { name: 'Node.js', logo: <FaNodeJs /> },
       { name: 'TypeScript', logo: <SiTypescript /> },
       { name: 'Deck.gl', logo: <SiChartdotjs /> },
       { name: 'MapLibre GL', logo: <SiMapbox /> }, // You may need to import a placeholder icon or custom logo
@@ -396,63 +400,66 @@ additional: [
 },
 {
   id: 5,
-  name: 'Hajj Bus Tracker',
-  type: 'Real-Time Bus Management & Tracking Platform',
+  name: 'Jafa Energy',
+  type: 'Manage solar panel installations and monitor performance.',
   description: 
-    'Hajj Bus Tracker is a real-time bus management system for Hajj operations in Saudi Arabia. It integrates GPS data from bus tracking devices to plot buses on interactive maps using Deck.gl and MapLibre GL. Users can monitor bus locations, driver and company information, routes, stops, and regional statistics. The platform supports reporting, charts, and printable route details, facilitating efficient transportation management during Hajj.',
+    'Full-stack MERN + Next.js web application to manage solar panel installations across multiple sites. Features real-time performance monitoring with interactive charts (production trends, heatmaps, efficiency analysis), geolocation mapping of sites and devices, alarm notifications for underperformance or inspection needs, automated report generation, and field log entries. Enables operators to track energy output, detect issues early, and optimize fleet-wide solar assets from a single dashboard.',
   heroimagesrc: '/images/project_pics/solarpanel/hero_image.jpg',
   liveurl: '', // Add live URL if available
   githuburl: 'https://github.com/yourusername/hajj-bus-tracker',
   sliders: [
+     {
+      image: { desktop: '/images/project_pics/solarpanel/slider_2.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_2_mobile.png' },
+      text: { title:  'Dashboard', description: 'All sites/locations important information, performance, alarms, locations etc.'}
+    },
     {
       image: { desktop: '/images/project_pics/solarpanel/slider_1.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_1_mobile.png' },
-      text: { title: 'Interactive Map with Buses', description: 'Real-time bus locations plotted as clickable markers.' }
+      text: { title: 'Site Detail', description: 'Information related to a site/location' }
     },
-    {
-      image: { desktop: '/images/project_pics/solarpanel/slider_2.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_2_mobile.png' },
-      text: { title: 'Region Tracking', description: 'View how many buses are in a specific region at any given time.' }
-    },
+   
     {
       image: { desktop: '/images/project_pics/solarpanel/slider_3.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_3_mobile.png' },
-      text: { title: 'Routes & Stops', description: 'Detailed route information including stops, duration, and printable maps.' }
+      text: { title: 'Site Analysis', description: 'heat maps and charts for site analysis' }
     },
     {
       image: { desktop: '/images/project_pics/solarpanel/slider_4.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_4_mobile.png' },
-      text: { title: 'Reporting & Analytics', description: 'Generate reports and charts for bus movements, standing times, and operational statistics.' }
+      text: { title: 'Add New Site', description: 'Add site page' }
     }
   ],
-  features: [
-    { name: 'Real-time tracking of 5,000+ buses', logo: <FaBus className="text-2xl text-blue-600" /> },
-    { name: 'Sub-second SignalR WebSocket updates', logo: <IoMdSync className="text-2xl text-green-500" /> },
-    { name: '60fps high-density rendering with Deck.gl', logo: <SiMapbox className="text-2xl text-green-700" /> },
-    { name: 'Clickable markers (plate, driver, company, speed)', logo: <FaInfoCircle className="text-2xl" /> },
-    { name: 'Geofenced zones (Mina, Arafat, Muzdalifah)', logo: <BsGeoAltFill className="text-2xl text-orange-600" /> },
-    { name: 'Live entry/exit counters & occupancy analytics', logo: <BsBarChartFill className="text-2xl text-purple-600" /> },
-    { name: 'Historical route playback with timeline', logo: <FaRoute className="text-2xl text-cyan-600" /> },
-    { name: 'Printable trip reports (distance, stops, duration)', logo: <FaPrint className="text-2xl" /> },
-    { name: 'Idle-time heatmaps & CSV/PDF export', logo: <FaFileCsv className="text-2xl text-green-600" /> },
-    { name: 'Responsive control-room dashboard', logo: <FaTabletAlt className="text-2xl" /> },
-  ],
-  techStack: {
-    core: [
-      
-      { name: 'React.js', logo: <FaReact /> },
-      { name: 'Node.js', logo: <FaNodeJs /> },
-      { name: 'TypeScript', logo: <SiTypescript /> },
-      { name: 'Deck.gl', logo: <SiChartdotjs /> },
-      { name: 'MapLibre GL', logo: <SiMapbox /> }, // You may need to import a placeholder icon or custom logo
-      { name: 'SignalR', logo: <SiSocketdotio /> },
-      { name: 'Real-Time WebSockets', logo: <IoMdSync /> },
+features: [
+  { name: 'Live monitoring of 500+ solar sites worldwide', logo: <FiGlobe className="text-2xl text-blue-600" /> },
+  { name: 'Real-time energy production & performance charts', logo: <BsGraphUpArrow className="text-2xl text-green-500" /> },
+  { name: 'Interactive heatmaps for irradiance & output density', logo: <FaFire className="text-2xl text-orange-600" /> },
+  { name: 'Geolocation mapping with site + inverter clustering', logo: <FaMapMarkedAlt className="text-2xl text-teal-600" /> },
+  { name: 'Instant alarms for low yield, faults & inspection alerts', logo: <IoAlertCircle className="text-2xl text-red-600" /> },
+  { name: 'Device-level drill-down (inverters, meters, sensors)', logo: <FaMicrochip className="text-2xl text-indigo-600" /> },
+  { name: 'Trend analysis: daily, monthly & yearly comparisons', logo: <BsBarChartFill className="text-2xl text-purple-600" /> },
+  { name: 'Automated PDF/Excel performance & maintenance reports', logo: <FaFilePdf className="text-2xl text-red-700" /> },
+  { name: 'Field technician logs & inspection scheduling', logo: <FaTools className="text-2xl text-yellow-600" /> },
+  { name: 'Responsive dashboard – mobile & control-room ready', logo: <FaTabletAlt className="text-2xl text-gray-700" /> },
+],
+ techStack: {
+  core: [
+    { name: 'MongoDB', logo: <SiMongodb /> },
+    { name: 'Express.js', logo: <SiExpress /> },
+    { name: 'React.js', logo: <FaReact /> },
+    { name: 'Next.js', logo: <SiNextdotjs /> },
 
-      
-    ],
-    additional: [
-      { name: 'React-CSV Export', logo: <FaFileCsv /> },
-      { name: 'MUI Components', logo: <SiMui /> },
-      { name: 'Charts & Analytics', logo: <BsBarChartLine /> },
-      { name: 'Responsive Design', logo: <SiTailwindcss /> }
-    ]
-  },
+    { name: 'Node.js', logo: <FaNodeJs /> },
+  ],
+  additional: [
+    { name: 'TypeScript', logo: <SiTypescript /> },
+    { name: 'Tailwind CSS', logo: <SiTailwindcss /> },
+    { name: 'MUI v5', logo: <SiMui /> },
+    { name: 'React Query', logo: <SiReactquery /> },
+    { name: 'React Leaflet', logo: <FaMapMarkedAlt /> },
+    { name: 'ApexCharts', logo: <BsBarChartLine /> },
+    { name: 'PDF & CSV Reports', logo: <AiOutlineFilePdf /> },
+    { name: 'NextAuth.js', logo: <FaShieldAlt /> },
+    { name: 'Zod & Formik', logo: <TbChecks /> },
+    { name: 'i18n Support', logo: <FiGlobe /> },
+  ]
+},
   highlight: true
 },
   // Remaining projects
