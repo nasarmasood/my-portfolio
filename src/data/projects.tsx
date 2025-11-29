@@ -35,13 +35,14 @@ export const projectsData: ProjectDataType[] = [
     src: '/images/project_pics/hajj/logo.svg',
     highlight: true,
   },
-  {
+ 
+   {
     id: 4,
-    name: 'Feedback Uplift',
-    type: 'Web App',
-    description: 'Assists companies in collecting customer feedback efficiently.',
-    src: '/images/project_pics/feedbackuplift/logo.svg',
-    
+    name: 'Tower',
+    type: 'Web & Mobile App',
+    description: 'Manage residential buildings efficiently.',
+    src: '/images/project_pics/tower/logo.webp',
+    highlight: true,
   },
   {
     id: 5,
@@ -57,13 +58,13 @@ export const projectsData: ProjectDataType[] = [
     description: 'Comprehensive management for dental clinics.',
     src: '/images/project_pics/clovedental/logo.svg',
   },
-  {
-    id: 7,
-    name: 'Clove Web',
-    type: 'Website',
-    description: 'Website for Hosiptal or Medical Company.',
-    src: '/images/project_pics/cloveweb/logo.svg',
-  },
+  // {
+  //   id: 7,
+  //   name: 'Clove Web',
+  //   type: 'Website',
+  //   description: 'Website for Hosiptal or Medical Company.',
+  //   src: '/images/project_pics/cloveweb/logo.svg',
+  // },
   {
     id: 8,
     name: 'Alfain Website',
@@ -79,20 +80,21 @@ export const projectsData: ProjectDataType[] = [
     src: '/images/project_pics/chatboat/logo.jpg',
     highlight: true,
   },
-  {
+   {
     id: 10,
-    name: 'Tower',
-    type: 'Web & Mobile App',
-    description: 'Manage residential buildings efficiently.',
-    src: '/images/project_pics/tower/logo.webp',
-    highlight: true,
+    name: 'Feedback Uplift',
+    type: 'Web App',
+    description: 'Assists companies in collecting customer feedback efficiently.',
+    src: '/images/project_pics/feedbackuplift/logo.svg',
+    
   },
-  {
-    id: 11,
-    name: 'Arabic GPT',
-    type: 'AI Chatbot',
-    description: 'Arabic language AI-based chatbot solution.',
-    src: '/images/projectpic.svg',
-    highlight: true,
-  },
+ 
+  // {
+  //   id: 11,
+  //   name: 'Arabic GPT',
+  //   type: 'AI Chatbot',
+  //   description: 'Arabic language AI-based chatbot solution.',
+  //   src: '/images/projectpic.svg',
+  //   highlight: true,
+  // },
 ];

@@ -34,7 +34,7 @@ import { FaFileCsv } from "react-icons/fa";
 import { BsGlobe, BsBarChartLine } from "react-icons/bs";
 
 // Core Tech Logos
-import { SiTypescript, SiTailwindcss } from "react-icons/si";
+import { SiTypescript, SiTailwindcss,SiStrapi } from "react-icons/si";
 import { SiMapbox } from "react-icons/si"; // close alternative
 
 import { FaBus, FaInfoCircle, FaRoute, FaPrint, FaTabletAlt } from "react-icons/fa";
@@ -52,6 +52,30 @@ import { FiGlobe } from "react-icons/fi";
 import { BsGraphUpArrow } from "react-icons/bs";
 import { FaFire, FaMapMarkedAlt, FaMicrochip, FaFilePdf, FaTools } from "react-icons/fa";
 import { IoAlertCircle } from "react-icons/io5";
+
+import { 
+  FaUsersCog, 
+  FaRedditAlien, 
+  // if you prefer Reddit icon
+  FaShoppingCart, 
+  FaCalendarAlt, 
+  FaBullhorn, 
+  FaKey, 
+  FaMobileAlt, 
+  FaConciergeBell,
+} from 'react-icons/fa';
+import { IoMdNotifications } from 'react-icons/io';
+import { 
+  SiNestjs, 
+  SiPostgresql, 
+  SiPrisma, 
+  SiCloudinary, 
+  SiStripe,
+  SiExpo,
+  SiReact
+} from 'react-icons/si';
+
+// Then paste the full Tower object below this
 
 export interface FeatureType {
   name: string;
@@ -336,70 +360,456 @@ additional: [
 ,
 {
   id: 4,
-  name: 'Hajj Bus Tracker',
-  type: 'Real-Time Bus Management & Tracking Platform',
-  description: 
-    'Hajj Bus Tracker is a real-time bus management system for Hajj operations in Saudi Arabia. It integrates GPS data from bus tracking devices to plot buses on interactive maps using Deck.gl and MapLibre GL. Users can monitor bus locations, driver and company information, routes, stops, and regional statistics. The platform supports reporting, charts, and printable route details, facilitating efficient transportation management during Hajj.',
-  heroimagesrc: '/images/project_pics/hajj-bus-tracker/hero_image.png',
-  liveurl: '', // Add live URL if available
-  githuburl: 'https://github.com/yourusername/hajj-bus-tracker',
+  name: 'Tower',
+  type: 'All-in-One Residential Building Management Platform',
+  description:
+    'Tower is a full-stack web + mobile application that modernizes residential building operations and community living. Built with Strapi as the backend, it empowers residents, staff, and managers with role-based dashboards, a Reddit-style community feed, local marketplace, event system, maintenance requests, digital guest keys, announcements, and real-time notifications.',
+  heroimagesrc: '/images/project_pics/tower/hero-image.png',
+  liveurl: '', // Add when deployed
+  githuburl: 'https://github.com/yourusername/tower-strapi-app',
   sliders: [
     {
-      image: { desktop: '/images/project_pics/hajj-bus-tracker/map_view.png', mobile: '/images/project_pics/hajj-bus-tracker/slider_1_mobile.png' },
-      text: { title: 'Interactive Map with Buses', description: 'Real-time bus locations plotted as clickable markers.' }
+      image: { desktop: '/images/project_pics/tower/slider_1.png', mobile: '/images/project_pics/tower/slider_1_mobile.png' },
+      text: { title: 'Community Social Feed', description: 'Residents post updates, photos, polls — like Reddit but for your building.' }
     },
     {
-      image: { desktop: '/images/project_pics/hajj-bus-tracker/region_stats.png', mobile: '/images/project_pics/hajj-bus-tracker/slider_2_mobile.png' },
-      text: { title: 'Region Tracking', description: 'View how many buses are in a specific region at any given time.' }
+      image: { desktop: '/images/project_pics/tower/slider_2.png', mobile: '/images/project_pics/tower/slider_2_mobile.png' },
+      text: { title: 'Local Buy & Sell Marketplace', description: 'Safe in-building trading with photos, pricing, and chat.' }
     },
     {
-      image: { desktop: '/images/project_pics/hajj-bus-tracker/route_print.png', mobile: '/images/project_pics/hajj-bus-tracker/slider_3_mobile.png' },
-      text: { title: 'Routes & Stops', description: 'Detailed route information including stops, duration, and printable maps.' }
+      image: { desktop: '/images/project_pics/tower/slider_3.png', mobile: '/images/project_pics/tower/slider_3_mobile.png' },
+      text: { title: 'Events & RSVP System', description: 'Create parties, workouts, or meetings — residents can join instantly.' }
     },
     {
-      image: { desktop: '/images/project_pics/hajj-bus-tracker/reports.png', mobile: '/images/project_pics/hajj-bus-tracker/slider_4_mobile.png' },
-      text: { title: 'Reporting & Analytics', description: 'Generate reports and charts for bus movements, standing times, and operational statistics.' }
+      image: { desktop: '/images/project_pics/tower/slider_4.png', mobile: '/images/project_pics/tower/slider_4_mobile.png' },
+      text: { title: 'Maintenance Requests', description: 'Submit issues with photos, track progress, get notified when fixed.' }
+    },
+    {
+      image: { desktop: '/images/project_pics/tower/slider_5.png', mobile: '/images/project_pics/tower/slider_5_mobile.png' },
+      text: { title: 'Digital Guest Keys & Front Desk', description: 'Issue time-limited QR/access codes; reception approves in one click.' }
     }
   ],
   features: [
-    { name: 'Real-time tracking of 5,000+ buses', logo: <FaBus className="text-2xl text-blue-600" /> },
-    { name: 'Sub-second SignalR WebSocket updates', logo: <IoMdSync className="text-2xl text-green-500" /> },
-    { name: '60fps high-density rendering with Deck.gl', logo: <SiMapbox className="text-2xl text-green-700" /> },
-    { name: 'Clickable markers (plate, driver, company, speed)', logo: <FaInfoCircle className="text-2xl" /> },
-    { name: 'Geofenced zones (Mina, Arafat, Muzdalifah)', logo: <BsGeoAltFill className="text-2xl text-orange-600" /> },
-    { name: 'Live entry/exit counters & occupancy analytics', logo: <BsBarChartFill className="text-2xl text-purple-600" /> },
-    { name: 'Historical route playback with timeline', logo: <FaRoute className="text-2xl text-cyan-600" /> },
-    { name: 'Printable trip reports (distance, stops, duration)', logo: <FaPrint className="text-2xl" /> },
-    { name: 'Idle-time heatmaps & CSV/PDF export', logo: <FaFileCsv className="text-2xl text-green-600" /> },
-    { name: 'Responsive control-room dashboard', logo: <FaTabletAlt className="text-2xl" /> },
+    { name: '3 User Roles with Permissions (Resident / Staff / Manager)', logo: <FaUsersCog className="text-2xl text-blue-600" /> },
+    { name: 'Strapi Headless CMS + Custom API', logo: <SiStrapi className="text-2xl text-purple-600" /> },
+    { name: 'Reddit-style Community Feed', logo: <FaRedditAlien className="text-2xl text-orange-600" /> },
+    { name: 'In-Building Marketplace (OLX Style)', logo: <FaShoppingCart className="text-2xl text-green-600" /> },
+    { name: 'Event Creation & RSVP with Notifications', logo: <FaCalendarAlt className="text-2xl text-purple-600" /> },
+    { name: 'Maintenance Booking & Tracking', logo: <FaTools className="text-2xl text-yellow-600" /> },
+    { name: 'Building Announcements & Alerts', logo: <FaBullhorn className="text-2xl text-red-600" /> },
+    { name: 'Digital Guest Access & QR Keys', logo: <FaKey className="text-2xl text-indigo-600" /> },
+    { name: 'Real-time Push Notifications (Web + Mobile)', logo: <IoMdNotifications className="text-2xl text-teal-500" /> },
+    { name: 'Responsive Web + Native Mobile Apps', logo: <FaMobileAlt className="text-2xl text-cyan-600" /> },
   ],
   techStack: {
-    
     core: [
-      { name: 'MongoDB', logo: <SiMongodb /> },
-  { name: 'Express.js', logo: <SiExpress /> },
-  { name: 'React.js', logo: <FaReact /> },
-  { name: 'Next.js', logo: <SiNextdotjs /> },
-  { name: 'Node.js', logo: <FaNodeJs /> },
+      { name: 'Strapi', logo: <SiStrapi /> },
+      { name: 'Next.js', logo: <SiNextdotjs /> },
+      { name: 'React.js', logo: <FaReact /> },
       { name: 'TypeScript', logo: <SiTypescript /> },
-      { name: 'Deck.gl', logo: <SiChartdotjs /> },
-      { name: 'MapLibre GL', logo: <SiMapbox /> }, // You may need to import a placeholder icon or custom logo
-      { name: 'SignalR', logo: <SiSocketdotio /> },
-      { name: 'Real-Time WebSockets', logo: <IoMdSync /> },
-
-      
+      { name: 'PostgreSQL', logo: <SiPostgresql /> },
+      { name: 'React Native', logo: <SiReact /> },
+      { name: 'Expo', logo: <SiExpo /> },
+      { name: 'Tailwind CSS', logo: <SiTailwindcss /> },
+      { name: 'Socket.io (Real-time)', logo: <SiSocketdotio /> },
+      { name: 'Firebase Cloud Messaging', logo: <SiFirebase /> },
     ],
     additional: [
-      { name: 'React-CSV Export', logo: <FaFileCsv /> },
-      { name: 'MUI Components', logo: <SiMui /> },
-      { name: 'Charts & Analytics', logo: <BsBarChartLine /> },
-      { name: 'Responsive Design', logo: <SiTailwindcss /> }
+      { name: 'Cloudinary (Media)', logo: <SiCloudinary /> },
+      { name: 'JWT + Role-Based Auth', logo: <FaShieldAlt /> },
+      { name: 'Zustand State Management', logo: <SiRedux /> },
+      { name: 'React Query / TanStack Query', logo: <SiReactquery /> },
+      { name: 'Stripe (Optional Payments)', logo: <SiStripe /> },
     ]
   },
   highlight: true
 },
 {
   id: 5,
+  name: 'Jafa Energy',
+  type: 'Manage solar panel installations and monitor performance.',
+  description: 
+    'Full-stack MERN + Next.js web application to manage solar panel installations across multiple sites. Features real-time performance monitoring with interactive charts (production trends, heatmaps, efficiency analysis), geolocation mapping of sites and devices, alarm notifications for underperformance or inspection needs, automated report generation, and field log entries. Enables operators to track energy output, detect issues early, and optimize fleet-wide solar assets from a single dashboard.',
+  heroimagesrc: '/images/project_pics/solarpanel/hero_image.jpg',
+  liveurl: '', // Add live URL if available
+  githuburl: 'https://github.com/yourusername/hajj-bus-tracker',
+  sliders: [
+     {
+      image: { desktop: '/images/project_pics/solarpanel/slider_2.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_2_mobile.png' },
+      text: { title:  'Dashboard', description: 'All sites/locations important information, performance, alarms, locations etc.'}
+    },
+    {
+      image: { desktop: '/images/project_pics/solarpanel/slider_1.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_1_mobile.png' },
+      text: { title: 'Site Detail', description: 'Information related to a site/location' }
+    },
+   
+    {
+      image: { desktop: '/images/project_pics/solarpanel/slider_3.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_3_mobile.png' },
+      text: { title: 'Site Analysis', description: 'heat maps and charts for site analysis' }
+    },
+    {
+      image: { desktop: '/images/project_pics/solarpanel/slider_4.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_4_mobile.png' },
+      text: { title: 'Add New Site', description: 'Add site page' }
+    }
+  ],
+features: [
+  { name: 'Live monitoring of 500+ solar sites worldwide', logo: <FiGlobe className="text-2xl text-blue-600" /> },
+  { name: 'Real-time energy production & performance charts', logo: <BsGraphUpArrow className="text-2xl text-green-500" /> },
+  { name: 'Interactive heatmaps for irradiance & output density', logo: <FaFire className="text-2xl text-orange-600" /> },
+  { name: 'Geolocation mapping with site + inverter clustering', logo: <FaMapMarkedAlt className="text-2xl text-teal-600" /> },
+  { name: 'Instant alarms for low yield, faults & inspection alerts', logo: <IoAlertCircle className="text-2xl text-red-600" /> },
+  { name: 'Device-level drill-down (inverters, meters, sensors)', logo: <FaMicrochip className="text-2xl text-indigo-600" /> },
+  { name: 'Trend analysis: daily, monthly & yearly comparisons', logo: <BsBarChartFill className="text-2xl text-purple-600" /> },
+  { name: 'Automated PDF/Excel performance & maintenance reports', logo: <FaFilePdf className="text-2xl text-red-700" /> },
+  { name: 'Field technician logs & inspection scheduling', logo: <FaTools className="text-2xl text-yellow-600" /> },
+  { name: 'Responsive dashboard – mobile & control-room ready', logo: <FaTabletAlt className="text-2xl text-gray-700" /> },
+],
+ techStack: {
+  core: [
+    { name: 'MongoDB', logo: <SiMongodb /> },
+    { name: 'Express.js', logo: <SiExpress /> },
+    { name: 'React.js', logo: <FaReact /> },
+    { name: 'Next.js', logo: <SiNextdotjs /> },
+
+    { name: 'Node.js', logo: <FaNodeJs /> },
+  ],
+  additional: [
+    { name: 'TypeScript', logo: <SiTypescript /> },
+    { name: 'Tailwind CSS', logo: <SiTailwindcss /> },
+    { name: 'MUI v5', logo: <SiMui /> },
+    { name: 'React Query', logo: <SiReactquery /> },
+    { name: 'React Leaflet', logo: <FaMapMarkedAlt /> },
+    { name: 'ApexCharts', logo: <BsBarChartLine /> },
+    { name: 'PDF & CSV Reports', logo: <AiOutlineFilePdf /> },
+    { name: 'NextAuth.js', logo: <FaShieldAlt /> },
+    { name: 'Zod & Formik', logo: <TbChecks /> },
+    { name: 'i18n Support', logo: <FiGlobe /> },
+  ]
+},
+  highlight: true
+},
+{
+  id: 5,
+  name: 'Jafa Energy',
+  type: 'Manage solar panel installations and monitor performance.',
+  description: 
+    'Full-stack MERN + Next.js web application to manage solar panel installations across multiple sites. Features real-time performance monitoring with interactive charts (production trends, heatmaps, efficiency analysis), geolocation mapping of sites and devices, alarm notifications for underperformance or inspection needs, automated report generation, and field log entries. Enables operators to track energy output, detect issues early, and optimize fleet-wide solar assets from a single dashboard.',
+  heroimagesrc: '/images/project_pics/solarpanel/hero_image.jpg',
+  liveurl: '', // Add live URL if available
+  githuburl: 'https://github.com/yourusername/hajj-bus-tracker',
+  sliders: [
+     {
+      image: { desktop: '/images/project_pics/solarpanel/slider_2.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_2_mobile.png' },
+      text: { title:  'Dashboard', description: 'All sites/locations important information, performance, alarms, locations etc.'}
+    },
+    {
+      image: { desktop: '/images/project_pics/solarpanel/slider_1.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_1_mobile.png' },
+      text: { title: 'Site Detail', description: 'Information related to a site/location' }
+    },
+   
+    {
+      image: { desktop: '/images/project_pics/solarpanel/slider_3.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_3_mobile.png' },
+      text: { title: 'Site Analysis', description: 'heat maps and charts for site analysis' }
+    },
+    {
+      image: { desktop: '/images/project_pics/solarpanel/slider_4.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_4_mobile.png' },
+      text: { title: 'Add New Site', description: 'Add site page' }
+    }
+  ],
+features: [
+  { name: 'Live monitoring of 500+ solar sites worldwide', logo: <FiGlobe className="text-2xl text-blue-600" /> },
+  { name: 'Real-time energy production & performance charts', logo: <BsGraphUpArrow className="text-2xl text-green-500" /> },
+  { name: 'Interactive heatmaps for irradiance & output density', logo: <FaFire className="text-2xl text-orange-600" /> },
+  { name: 'Geolocation mapping with site + inverter clustering', logo: <FaMapMarkedAlt className="text-2xl text-teal-600" /> },
+  { name: 'Instant alarms for low yield, faults & inspection alerts', logo: <IoAlertCircle className="text-2xl text-red-600" /> },
+  { name: 'Device-level drill-down (inverters, meters, sensors)', logo: <FaMicrochip className="text-2xl text-indigo-600" /> },
+  { name: 'Trend analysis: daily, monthly & yearly comparisons', logo: <BsBarChartFill className="text-2xl text-purple-600" /> },
+  { name: 'Automated PDF/Excel performance & maintenance reports', logo: <FaFilePdf className="text-2xl text-red-700" /> },
+  { name: 'Field technician logs & inspection scheduling', logo: <FaTools className="text-2xl text-yellow-600" /> },
+  { name: 'Responsive dashboard – mobile & control-room ready', logo: <FaTabletAlt className="text-2xl text-gray-700" /> },
+],
+ techStack: {
+  core: [
+    { name: 'MongoDB', logo: <SiMongodb /> },
+    { name: 'Express.js', logo: <SiExpress /> },
+    { name: 'React.js', logo: <FaReact /> },
+    { name: 'Next.js', logo: <SiNextdotjs /> },
+
+    { name: 'Node.js', logo: <FaNodeJs /> },
+  ],
+  additional: [
+    { name: 'TypeScript', logo: <SiTypescript /> },
+    { name: 'Tailwind CSS', logo: <SiTailwindcss /> },
+    { name: 'MUI v5', logo: <SiMui /> },
+    { name: 'React Query', logo: <SiReactquery /> },
+    { name: 'React Leaflet', logo: <FaMapMarkedAlt /> },
+    { name: 'ApexCharts', logo: <BsBarChartLine /> },
+    { name: 'PDF & CSV Reports', logo: <AiOutlineFilePdf /> },
+    { name: 'NextAuth.js', logo: <FaShieldAlt /> },
+    { name: 'Zod & Formik', logo: <TbChecks /> },
+    { name: 'i18n Support', logo: <FiGlobe /> },
+  ]
+},
+  highlight: true
+},
+{
+  id: 6,
+  name: 'Jafa Energy',
+  type: 'Manage solar panel installations and monitor performance.',
+  description: 
+    'Full-stack MERN + Next.js web application to manage solar panel installations across multiple sites. Features real-time performance monitoring with interactive charts (production trends, heatmaps, efficiency analysis), geolocation mapping of sites and devices, alarm notifications for underperformance or inspection needs, automated report generation, and field log entries. Enables operators to track energy output, detect issues early, and optimize fleet-wide solar assets from a single dashboard.',
+  heroimagesrc: '/images/project_pics/solarpanel/hero_image.jpg',
+  liveurl: '', // Add live URL if available
+  githuburl: 'https://github.com/yourusername/hajj-bus-tracker',
+  sliders: [
+     {
+      image: { desktop: '/images/project_pics/solarpanel/slider_2.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_2_mobile.png' },
+      text: { title:  'Dashboard', description: 'All sites/locations important information, performance, alarms, locations etc.'}
+    },
+    {
+      image: { desktop: '/images/project_pics/solarpanel/slider_1.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_1_mobile.png' },
+      text: { title: 'Site Detail', description: 'Information related to a site/location' }
+    },
+   
+    {
+      image: { desktop: '/images/project_pics/solarpanel/slider_3.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_3_mobile.png' },
+      text: { title: 'Site Analysis', description: 'heat maps and charts for site analysis' }
+    },
+    {
+      image: { desktop: '/images/project_pics/solarpanel/slider_4.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_4_mobile.png' },
+      text: { title: 'Add New Site', description: 'Add site page' }
+    }
+  ],
+features: [
+  { name: 'Live monitoring of 500+ solar sites worldwide', logo: <FiGlobe className="text-2xl text-blue-600" /> },
+  { name: 'Real-time energy production & performance charts', logo: <BsGraphUpArrow className="text-2xl text-green-500" /> },
+  { name: 'Interactive heatmaps for irradiance & output density', logo: <FaFire className="text-2xl text-orange-600" /> },
+  { name: 'Geolocation mapping with site + inverter clustering', logo: <FaMapMarkedAlt className="text-2xl text-teal-600" /> },
+  { name: 'Instant alarms for low yield, faults & inspection alerts', logo: <IoAlertCircle className="text-2xl text-red-600" /> },
+  { name: 'Device-level drill-down (inverters, meters, sensors)', logo: <FaMicrochip className="text-2xl text-indigo-600" /> },
+  { name: 'Trend analysis: daily, monthly & yearly comparisons', logo: <BsBarChartFill className="text-2xl text-purple-600" /> },
+  { name: 'Automated PDF/Excel performance & maintenance reports', logo: <FaFilePdf className="text-2xl text-red-700" /> },
+  { name: 'Field technician logs & inspection scheduling', logo: <FaTools className="text-2xl text-yellow-600" /> },
+  { name: 'Responsive dashboard – mobile & control-room ready', logo: <FaTabletAlt className="text-2xl text-gray-700" /> },
+],
+ techStack: {
+  core: [
+    { name: 'MongoDB', logo: <SiMongodb /> },
+    { name: 'Express.js', logo: <SiExpress /> },
+    { name: 'React.js', logo: <FaReact /> },
+    { name: 'Next.js', logo: <SiNextdotjs /> },
+
+    { name: 'Node.js', logo: <FaNodeJs /> },
+  ],
+  additional: [
+    { name: 'TypeScript', logo: <SiTypescript /> },
+    { name: 'Tailwind CSS', logo: <SiTailwindcss /> },
+    { name: 'MUI v5', logo: <SiMui /> },
+    { name: 'React Query', logo: <SiReactquery /> },
+    { name: 'React Leaflet', logo: <FaMapMarkedAlt /> },
+    { name: 'ApexCharts', logo: <BsBarChartLine /> },
+    { name: 'PDF & CSV Reports', logo: <AiOutlineFilePdf /> },
+    { name: 'NextAuth.js', logo: <FaShieldAlt /> },
+    { name: 'Zod & Formik', logo: <TbChecks /> },
+    { name: 'i18n Support', logo: <FiGlobe /> },
+  ]
+},
+  highlight: true
+},
+{
+  id: 7,
+  name: 'Jafa Energy',
+  type: 'Manage solar panel installations and monitor performance.',
+  description: 
+    'Full-stack MERN + Next.js web application to manage solar panel installations across multiple sites. Features real-time performance monitoring with interactive charts (production trends, heatmaps, efficiency analysis), geolocation mapping of sites and devices, alarm notifications for underperformance or inspection needs, automated report generation, and field log entries. Enables operators to track energy output, detect issues early, and optimize fleet-wide solar assets from a single dashboard.',
+  heroimagesrc: '/images/project_pics/solarpanel/hero_image.jpg',
+  liveurl: '', // Add live URL if available
+  githuburl: 'https://github.com/yourusername/hajj-bus-tracker',
+  sliders: [
+     {
+      image: { desktop: '/images/project_pics/solarpanel/slider_2.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_2_mobile.png' },
+      text: { title:  'Dashboard', description: 'All sites/locations important information, performance, alarms, locations etc.'}
+    },
+    {
+      image: { desktop: '/images/project_pics/solarpanel/slider_1.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_1_mobile.png' },
+      text: { title: 'Site Detail', description: 'Information related to a site/location' }
+    },
+   
+    {
+      image: { desktop: '/images/project_pics/solarpanel/slider_3.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_3_mobile.png' },
+      text: { title: 'Site Analysis', description: 'heat maps and charts for site analysis' }
+    },
+    {
+      image: { desktop: '/images/project_pics/solarpanel/slider_4.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_4_mobile.png' },
+      text: { title: 'Add New Site', description: 'Add site page' }
+    }
+  ],
+features: [
+  { name: 'Live monitoring of 500+ solar sites worldwide', logo: <FiGlobe className="text-2xl text-blue-600" /> },
+  { name: 'Real-time energy production & performance charts', logo: <BsGraphUpArrow className="text-2xl text-green-500" /> },
+  { name: 'Interactive heatmaps for irradiance & output density', logo: <FaFire className="text-2xl text-orange-600" /> },
+  { name: 'Geolocation mapping with site + inverter clustering', logo: <FaMapMarkedAlt className="text-2xl text-teal-600" /> },
+  { name: 'Instant alarms for low yield, faults & inspection alerts', logo: <IoAlertCircle className="text-2xl text-red-600" /> },
+  { name: 'Device-level drill-down (inverters, meters, sensors)', logo: <FaMicrochip className="text-2xl text-indigo-600" /> },
+  { name: 'Trend analysis: daily, monthly & yearly comparisons', logo: <BsBarChartFill className="text-2xl text-purple-600" /> },
+  { name: 'Automated PDF/Excel performance & maintenance reports', logo: <FaFilePdf className="text-2xl text-red-700" /> },
+  { name: 'Field technician logs & inspection scheduling', logo: <FaTools className="text-2xl text-yellow-600" /> },
+  { name: 'Responsive dashboard – mobile & control-room ready', logo: <FaTabletAlt className="text-2xl text-gray-700" /> },
+],
+ techStack: {
+  core: [
+    { name: 'MongoDB', logo: <SiMongodb /> },
+    { name: 'Express.js', logo: <SiExpress /> },
+    { name: 'React.js', logo: <FaReact /> },
+    { name: 'Next.js', logo: <SiNextdotjs /> },
+
+    { name: 'Node.js', logo: <FaNodeJs /> },
+  ],
+  additional: [
+    { name: 'TypeScript', logo: <SiTypescript /> },
+    { name: 'Tailwind CSS', logo: <SiTailwindcss /> },
+    { name: 'MUI v5', logo: <SiMui /> },
+    { name: 'React Query', logo: <SiReactquery /> },
+    { name: 'React Leaflet', logo: <FaMapMarkedAlt /> },
+    { name: 'ApexCharts', logo: <BsBarChartLine /> },
+    { name: 'PDF & CSV Reports', logo: <AiOutlineFilePdf /> },
+    { name: 'NextAuth.js', logo: <FaShieldAlt /> },
+    { name: 'Zod & Formik', logo: <TbChecks /> },
+    { name: 'i18n Support', logo: <FiGlobe /> },
+  ]
+},
+  highlight: true
+},
+{
+  id: 8,
+  name: 'Jafa Energy',
+  type: 'Manage solar panel installations and monitor performance.',
+  description: 
+    'Full-stack MERN + Next.js web application to manage solar panel installations across multiple sites. Features real-time performance monitoring with interactive charts (production trends, heatmaps, efficiency analysis), geolocation mapping of sites and devices, alarm notifications for underperformance or inspection needs, automated report generation, and field log entries. Enables operators to track energy output, detect issues early, and optimize fleet-wide solar assets from a single dashboard.',
+  heroimagesrc: '/images/project_pics/solarpanel/hero_image.jpg',
+  liveurl: '', // Add live URL if available
+  githuburl: 'https://github.com/yourusername/hajj-bus-tracker',
+  sliders: [
+     {
+      image: { desktop: '/images/project_pics/solarpanel/slider_2.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_2_mobile.png' },
+      text: { title:  'Dashboard', description: 'All sites/locations important information, performance, alarms, locations etc.'}
+    },
+    {
+      image: { desktop: '/images/project_pics/solarpanel/slider_1.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_1_mobile.png' },
+      text: { title: 'Site Detail', description: 'Information related to a site/location' }
+    },
+   
+    {
+      image: { desktop: '/images/project_pics/solarpanel/slider_3.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_3_mobile.png' },
+      text: { title: 'Site Analysis', description: 'heat maps and charts for site analysis' }
+    },
+    {
+      image: { desktop: '/images/project_pics/solarpanel/slider_4.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_4_mobile.png' },
+      text: { title: 'Add New Site', description: 'Add site page' }
+    }
+  ],
+features: [
+  { name: 'Live monitoring of 500+ solar sites worldwide', logo: <FiGlobe className="text-2xl text-blue-600" /> },
+  { name: 'Real-time energy production & performance charts', logo: <BsGraphUpArrow className="text-2xl text-green-500" /> },
+  { name: 'Interactive heatmaps for irradiance & output density', logo: <FaFire className="text-2xl text-orange-600" /> },
+  { name: 'Geolocation mapping with site + inverter clustering', logo: <FaMapMarkedAlt className="text-2xl text-teal-600" /> },
+  { name: 'Instant alarms for low yield, faults & inspection alerts', logo: <IoAlertCircle className="text-2xl text-red-600" /> },
+  { name: 'Device-level drill-down (inverters, meters, sensors)', logo: <FaMicrochip className="text-2xl text-indigo-600" /> },
+  { name: 'Trend analysis: daily, monthly & yearly comparisons', logo: <BsBarChartFill className="text-2xl text-purple-600" /> },
+  { name: 'Automated PDF/Excel performance & maintenance reports', logo: <FaFilePdf className="text-2xl text-red-700" /> },
+  { name: 'Field technician logs & inspection scheduling', logo: <FaTools className="text-2xl text-yellow-600" /> },
+  { name: 'Responsive dashboard – mobile & control-room ready', logo: <FaTabletAlt className="text-2xl text-gray-700" /> },
+],
+ techStack: {
+  core: [
+    { name: 'MongoDB', logo: <SiMongodb /> },
+    { name: 'Express.js', logo: <SiExpress /> },
+    { name: 'React.js', logo: <FaReact /> },
+    { name: 'Next.js', logo: <SiNextdotjs /> },
+
+    { name: 'Node.js', logo: <FaNodeJs /> },
+  ],
+  additional: [
+    { name: 'TypeScript', logo: <SiTypescript /> },
+    { name: 'Tailwind CSS', logo: <SiTailwindcss /> },
+    { name: 'MUI v5', logo: <SiMui /> },
+    { name: 'React Query', logo: <SiReactquery /> },
+    { name: 'React Leaflet', logo: <FaMapMarkedAlt /> },
+    { name: 'ApexCharts', logo: <BsBarChartLine /> },
+    { name: 'PDF & CSV Reports', logo: <AiOutlineFilePdf /> },
+    { name: 'NextAuth.js', logo: <FaShieldAlt /> },
+    { name: 'Zod & Formik', logo: <TbChecks /> },
+    { name: 'i18n Support', logo: <FiGlobe /> },
+  ]
+},
+  highlight: true
+},
+{
+  id: 9,
+  name: 'Jafa Energy',
+  type: 'Manage solar panel installations and monitor performance.',
+  description: 
+    'Full-stack MERN + Next.js web application to manage solar panel installations across multiple sites. Features real-time performance monitoring with interactive charts (production trends, heatmaps, efficiency analysis), geolocation mapping of sites and devices, alarm notifications for underperformance or inspection needs, automated report generation, and field log entries. Enables operators to track energy output, detect issues early, and optimize fleet-wide solar assets from a single dashboard.',
+  heroimagesrc: '/images/project_pics/solarpanel/hero_image.jpg',
+  liveurl: '', // Add live URL if available
+  githuburl: 'https://github.com/yourusername/hajj-bus-tracker',
+  sliders: [
+     {
+      image: { desktop: '/images/project_pics/solarpanel/slider_2.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_2_mobile.png' },
+      text: { title:  'Dashboard', description: 'All sites/locations important information, performance, alarms, locations etc.'}
+    },
+    {
+      image: { desktop: '/images/project_pics/solarpanel/slider_1.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_1_mobile.png' },
+      text: { title: 'Site Detail', description: 'Information related to a site/location' }
+    },
+   
+    {
+      image: { desktop: '/images/project_pics/solarpanel/slider_3.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_3_mobile.png' },
+      text: { title: 'Site Analysis', description: 'heat maps and charts for site analysis' }
+    },
+    {
+      image: { desktop: '/images/project_pics/solarpanel/slider_4.svg', mobile: '/images/project_pics/hajj-bus-tracker/slider_4_mobile.png' },
+      text: { title: 'Add New Site', description: 'Add site page' }
+    }
+  ],
+features: [
+  { name: 'Live monitoring of 500+ solar sites worldwide', logo: <FiGlobe className="text-2xl text-blue-600" /> },
+  { name: 'Real-time energy production & performance charts', logo: <BsGraphUpArrow className="text-2xl text-green-500" /> },
+  { name: 'Interactive heatmaps for irradiance & output density', logo: <FaFire className="text-2xl text-orange-600" /> },
+  { name: 'Geolocation mapping with site + inverter clustering', logo: <FaMapMarkedAlt className="text-2xl text-teal-600" /> },
+  { name: 'Instant alarms for low yield, faults & inspection alerts', logo: <IoAlertCircle className="text-2xl text-red-600" /> },
+  { name: 'Device-level drill-down (inverters, meters, sensors)', logo: <FaMicrochip className="text-2xl text-indigo-600" /> },
+  { name: 'Trend analysis: daily, monthly & yearly comparisons', logo: <BsBarChartFill className="text-2xl text-purple-600" /> },
+  { name: 'Automated PDF/Excel performance & maintenance reports', logo: <FaFilePdf className="text-2xl text-red-700" /> },
+  { name: 'Field technician logs & inspection scheduling', logo: <FaTools className="text-2xl text-yellow-600" /> },
+  { name: 'Responsive dashboard – mobile & control-room ready', logo: <FaTabletAlt className="text-2xl text-gray-700" /> },
+],
+ techStack: {
+  core: [
+    { name: 'MongoDB', logo: <SiMongodb /> },
+    { name: 'Express.js', logo: <SiExpress /> },
+    { name: 'React.js', logo: <FaReact /> },
+    { name: 'Next.js', logo: <SiNextdotjs /> },
+
+    { name: 'Node.js', logo: <FaNodeJs /> },
+  ],
+  additional: [
+    { name: 'TypeScript', logo: <SiTypescript /> },
+    { name: 'Tailwind CSS', logo: <SiTailwindcss /> },
+    { name: 'MUI v5', logo: <SiMui /> },
+    { name: 'React Query', logo: <SiReactquery /> },
+    { name: 'React Leaflet', logo: <FaMapMarkedAlt /> },
+    { name: 'ApexCharts', logo: <BsBarChartLine /> },
+    { name: 'PDF & CSV Reports', logo: <AiOutlineFilePdf /> },
+    { name: 'NextAuth.js', logo: <FaShieldAlt /> },
+    { name: 'Zod & Formik', logo: <TbChecks /> },
+    { name: 'i18n Support', logo: <FiGlobe /> },
+  ]
+},
+  highlight: true
+},
+{
+  id: 10,
   name: 'Jafa Energy',
   type: 'Manage solar panel installations and monitor performance.',
   description: 
